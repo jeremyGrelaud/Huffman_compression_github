@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Huffman_compression_github", "Huffman_compression_github.vcxproj", "{CA203621-4DB6-4747-AC66-43165812F3D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA203621-4DB6-4747-AC66-43165812F3D6}.Debug|x64.ActiveCfg = Debug|x64
+		{CA203621-4DB6-4747-AC66-43165812F3D6}.Debug|x64.Build.0 = Debug|x64
+		{CA203621-4DB6-4747-AC66-43165812F3D6}.Debug|x86.ActiveCfg = Debug|Win32
+		{CA203621-4DB6-4747-AC66-43165812F3D6}.Debug|x86.Build.0 = Debug|Win32
+		{CA203621-4DB6-4747-AC66-43165812F3D6}.Release|x64.ActiveCfg = Release|x64
+		{CA203621-4DB6-4747-AC66-43165812F3D6}.Release|x64.Build.0 = Release|x64
+		{CA203621-4DB6-4747-AC66-43165812F3D6}.Release|x86.ActiveCfg = Release|Win32
+		{CA203621-4DB6-4747-AC66-43165812F3D6}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E438FB1-1E25-46AC-ABC2-B2E95466A77A}
+	EndGlobalSection
+EndGlobal
