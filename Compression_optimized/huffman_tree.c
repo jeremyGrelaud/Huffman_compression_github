@@ -13,6 +13,16 @@ int number_of_caracters(FILE* fichier)
     return compteur;
 }
 
+void trees_free_tree(Node* tree)
+{
+
+    if(tree!=NULL){
+        trees_free_tree(tree->left);
+        trees_free_tree(tree->right);
+        free(tree); //ici pour post-fixe
+    }
+}
+
 /*
 void permut(Node** x, Node** y)
 {
@@ -60,7 +70,7 @@ Node* build_huffman_tree(int* tabFrequencies)
     /*int nbCharacter = 0;
     for(int i=0 ; i<NUMBER_OF_ASCII ; i++){
         if(tabFrequencies[i] > 0) { nbCharacter++; }
-    }*/ /// TrËs probablement inutile
+    }*/ /// Tr√®s probablement inutile
 
 
     Element* new_elem = NULL;
@@ -210,7 +220,7 @@ Node* create_huffman_tree_from_LSC(Element* head)
 
     }while(head->next!=NULL);//tant que la liste contient 2 elements ou plus
 
-    return head->data; //contient un Node* qui est la racine de l'arbre crÈer
+    return head->data; //contient un Node* qui est la racine de l'arbre cr√©er
 }
 
 int depth(Node* tree)
