@@ -144,12 +144,13 @@ void printList(Element* debut)
 /* Bubble sort the given linked list */
 void bubbleSort(Element* start)
 {
-    int swapped;
+    
     Element *ptr1;
     Element *ptr2 = NULL;
 
     /* Checking for empty list */
     if (start != NULL){
+        int swapped;
         do
         {
             swapped = 0;
