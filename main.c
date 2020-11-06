@@ -24,6 +24,7 @@ void compression(FILE* text_to_convert, FILE* dicodicodi, FILE* compress)
     build_dico(huffman_tree, dicodicodi, arr, depth_huffman_tree);
     rewind(dicodicodi);
     trees_free_tree(huffman_tree);
+    free(huffman_tree);
 
     huffman_compression_in_different_file(text_to_convert, dicodicodi, compress, 0);
 
@@ -113,6 +114,7 @@ int main()
     build_dico(huffman_tree, dicodicodi, arr, 0);
     rewind(dicodicodi);
     trees_free_tree(huffman_tree);
+    free(huffman_tree);
 
     OPEN(compress, Compress, "w+")
 
