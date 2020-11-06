@@ -8,10 +8,11 @@
 void convert_10_to_base_octet(int number, int base, char* numberInBinary)
 {
     char* numberInWrongBinary = (char*)malloc(8 * sizeof(char));
-    int reste = 0;
+    
 
     for(int i=0 ; i<8 ; i++) // conversion from base 10 in base base
     {
+        int reste;
         int quotient;
         quotient = number / base;
         reste = number % base;
