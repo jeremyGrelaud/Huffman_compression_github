@@ -64,7 +64,8 @@ void convert_file_in_binary(FILE* text, FILE* text_in_binary)
 
 void convert_binary_in_file(FILE* text_in_binary, FILE* text_convert)
 {
-    int compteur = 0, charactAscii = 0, actualCharact = 0;
+    int compteur = 0, actualCharact = 0;
+    int charactAscii;
     char* binary_number = (char*)malloc(8 * sizeof(char));
 
     do{
