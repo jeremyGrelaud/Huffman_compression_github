@@ -4,7 +4,7 @@
 #include "../preprocessor_directives_and_structures.h"
 
 int number_of_caracters(FILE* fichier);
-void trees_free_tree(Node* tree);
+void trees_free_tree(Node** tree);
 void permut(Node** x, Node** y);
 void list_bubble_sort(Node** tab, int taille);
 
