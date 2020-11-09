@@ -13,13 +13,13 @@ int number_of_caracters(FILE* fichier)
     return compteur;
 }
 
-void trees_free_tree(Node* tree)
+void trees_free_tree(Node** tree)
 {
 
-    if(tree!=NULL){
-        trees_free_tree(tree->left);
-        trees_free_tree(tree->right);
-        free(tree); //ici pour post-fixe
+    if(*tree!=NULL){
+        trees_free_tree(&(*(tree)->left));
+        trees_free_tree(&(*(tree)->right));
+        free(*tree); //ici pour post-fixe
     }
 }
 
