@@ -80,7 +80,7 @@ void huffman_compression_in_same_file(FILE* text_to_compress, FILE* compress, in
         int a; // ascii
         char b[20]; // huffman code
         int c; // frequency
-        alpha = fscanf(compress, "%d:%d:%s ", &a, &c, b);
+        alpha = fscanf(compress, "%d:%d:%19s ", &a, &c, b);
 
         if(alpha != -1){
             strcpy(tabDictionary[a], b);
@@ -126,7 +126,7 @@ Node* create_huffman_tree_by_dicodicodi(FILE* dico)
         int ascii;
         int frequency;
         char code[20];
-        alpha = fscanf(dico, "%d:%d:%s ", &ascii, &frequency, code);
+        alpha = fscanf(dico, "%d:%d:%19s ", &ascii, &frequency, code);
         //printf("ascci = %d ; frq = %d ; code = %s\n", ascii, frequency, code);
 
         int i = 0;
