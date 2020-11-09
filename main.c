@@ -23,8 +23,8 @@ void compression(FILE* text_to_convert, FILE* dicodicodi, FILE* compress)
     int* arr = (int*)malloc(depth_huffman_tree * sizeof(int));
     build_dico(huffman_tree, dicodicodi, arr, depth_huffman_tree);
     rewind(dicodicodi);
-    trees_free_tree(huffman_tree);
-    free(huffman_tree);
+    trees_free_tree(&huffman_tree);
+  
 
     huffman_compression_in_different_file(text_to_convert, dicodicodi, compress, 0);
 
@@ -134,7 +134,7 @@ int main()
 
     int actual;
     decompression(new_huffman_tree, compress, decompress);
-    trees_free_tree(new_huffman_tree);
+    trees_free_tree(&new_huffman_tree);
 
     fclose(non_compress);
     fclose(dicodicodi);
