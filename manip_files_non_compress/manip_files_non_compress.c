@@ -43,7 +43,9 @@ void convert_file_in_binary(FILE* text, FILE* text_in_binary)
     int actualCharact = 0;
     do{
         actualCharact = fgetc(text); // we read the character
-
+        
+        while ( getchar() != '\n' );//vidage du buffer
+        
         if(actualCharact != EOF)
         {
             //AFF(actualCharact, "actualCharact") // print Ascii number of the actual character
