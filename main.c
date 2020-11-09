@@ -14,7 +14,7 @@ void compression(FILE* text_to_convert, FILE* dicodicodi, FILE* compress)
     int* tab = NULL;
     tab = frequencies(text_to_convert);
 
-    Node* huffman_tree = (Node*)malloc(sizeof(Node));
+    Node* huffman_tree;
     huffman_tree = build_huffman_tree(tab);
     rewind(text_to_convert);
 
@@ -128,7 +128,7 @@ int main()
 
     OPEN(decompress, Decompress, "w")
 
-    Node* new_huffman_tree = (Node*)malloc(sizeof(Node));
+    Node* new_huffman_tree;
     new_huffman_tree = create_huffman_tree_by_dicodicodi(dicodicodi);
     print_tree_prefixe(new_huffman_tree);
 
