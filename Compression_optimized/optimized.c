@@ -118,7 +118,7 @@ Node* create_huffman_tree_by_dicodicodi(FILE* dico)
 {
     //Create the root
     Node* tree = create_node(0,0);
-    Node* root = (Node*)malloc(sizeof(Node));
+    Node* root;
     root = tree;
 
     int alpha = 0;
