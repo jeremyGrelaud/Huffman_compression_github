@@ -53,7 +53,7 @@ void huffman_compression_in_different_file(FILE* text_to_compress, FILE* dico, F
 
     }while(alpha != -1);
 
-    char actualCharacter;
+    int actualCharacter; //modifying in int type to avoid EOF compareason error
     //fputc('\n', dico); // for the version where the dictionary is just before the compress text
     do{
         actualCharacter = fgetc(text_to_compress);
@@ -89,7 +89,7 @@ void huffman_compression_in_same_file(FILE* text_to_compress, FILE* compress, in
 
     }while(alpha != -1);
 
-    char actualCharacter;
+    int actualCharacter; //modifying in int type to avoid EOF compareason error
     fputc('\n', compress); // for the version where the dictionary is just before the compress text
     do{
         actualCharacter = fgetc(text_to_compress);
