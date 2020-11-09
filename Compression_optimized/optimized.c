@@ -44,7 +44,7 @@ void huffman_compression_in_different_file(FILE* text_to_compress, FILE* dico, F
         int a; // ascii
         char b[20]; // huffman code
         int c; // frequency
-        alpha = fscanf(dico, "%d:%d:%20s ", &a, &c, b);
+        alpha = fscanf(dico, "%d:%d:%19s ", &a, &c, b);
 
         if(alpha != -1){
             strcpy(tabDictionary[a], b);
