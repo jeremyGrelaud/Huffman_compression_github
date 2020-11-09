@@ -158,6 +158,7 @@ Node* create_huffman_tree_by_dicodicodi(FILE* dico)
     }while(alpha != -1);
     
     free(root);
+    root = NULL;
     return tree;
 }
 
