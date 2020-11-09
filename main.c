@@ -98,7 +98,7 @@ int main()
     int* tab = NULL;
     tab = frequencies(text_to_convert);
 
-    Node* huffman_tree = (Node*)malloc(sizeof(Node));
+    Node* huffman_tree;
     huffman_tree = build_huffman_tree(tab);
     free(tab);
     print_tree_prefixe(huffman_tree);
