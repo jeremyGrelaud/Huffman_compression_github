@@ -44,7 +44,7 @@ void convert_file_in_binary(FILE* text, FILE* text_in_binary)
     do{
         actualCharact = fgetc(text); // we read the character
         
-        while ( getchar() != '\n' );//vidage du buffer
+        //wasn't a good idea while ( getchar() != '\n' );//vidage du buffer
         
         if(actualCharact != EOF)
         {
