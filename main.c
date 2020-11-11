@@ -12,7 +12,7 @@
  * @brief Create a huffman tree via dictionnary and use it to compress the file
  * 
  * @param text_to_convert : The file we compress
- * @param dicodicodi : Our dictionnary
+ * @param dicodicodi : The dictionnary
  * @param compress  : The compressed file
  */
 void compression(FILE* text_to_convert, FILE* dicodicodi, FILE* compress)
