@@ -113,7 +113,7 @@ int main()
     int* arr = (int*)malloc(depth_huffman_tree * sizeof(int));
     build_dico(huffman_tree, dicodicodi, arr, 0);
     rewind(dicodicodi);
-    trees_free_tree(huffman_tree);
+    trees_free_tree(&huffman_tree);
     free(huffman_tree);
 
     OPEN(compress, Compress, "w+")
