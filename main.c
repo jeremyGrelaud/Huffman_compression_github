@@ -84,6 +84,11 @@ void decompression(FILE* compress, Node* huffman_tree)
 
 }*/
 
+/**
+ * @brief This is the main function 
+ * 
+ * @return int 
+ */
 int main()
 {
     FILE* text_to_convert = NULL;
