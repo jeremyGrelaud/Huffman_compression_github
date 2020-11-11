@@ -8,7 +8,13 @@
 #include "Compression_optimized/huffman_tree.h"
 #include "Compression_optimized/optimized.h"
 
-
+/**
+ * @brief Test
+ * 
+ * @param text_to_convert 
+ * @param dicodicodi 
+ * @param compress 
+ */
 void compression(FILE* text_to_convert, FILE* dicodicodi, FILE* compress)
 {
     int* tab = NULL;
