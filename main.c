@@ -9,11 +9,11 @@
 #include "Compression_optimized/optimized.h"
 
 /**
- * @brief Test
+ * @brief Create a huffman tree via a dictionnary and use it to compress the file
  * 
- * @param text_to_convert 
- * @param dicodicodi 
- * @param compress 
+ * @param text_to_convert  the file we compress
+ * @param dicodicodi the dictionnary
+ * @param compress the compressed file
  */
 void compression(FILE* text_to_convert, FILE* dicodicodi, FILE* compress)
 {
