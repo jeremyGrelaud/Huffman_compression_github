@@ -8,7 +8,13 @@
 #include "Compression_optimized/huffman_tree.h"
 #include "Compression_optimized/optimized.h"
 
-
+/**
+ * @brief Create a huffman tree via dictionnary and use it to compress the file
+ * 
+ * @param text_to_convert : The file we compress
+ * @param dicodicodi : Our dictionnary
+ * @param compress  : The compressed file
+ */
 void compression(FILE* text_to_convert, FILE* dicodicodi, FILE* compress)
 {
     int* tab = NULL;
