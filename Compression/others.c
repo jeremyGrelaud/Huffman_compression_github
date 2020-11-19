@@ -2,8 +2,13 @@
 #include <stdlib.h>
 
 #include "others.h"
-
-int one_letter(FILE* file)  // return 1 if there s only one type of char; return 0 else
+/**
+ * @brief Return 1 if there s only one type of char; return 0 else
+ * 
+ * @param file The text analyzed
+ * @return int 1 or 0
+ */
+int one_letter(FILE* file) 
 {
     char fst_letter;
     char letter;
