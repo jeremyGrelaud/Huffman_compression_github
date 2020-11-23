@@ -248,7 +248,7 @@ int For_rule_them_all(int number_of_test)
     //sum += TU_convert_10_to_base_octet();
     sum += TU_frequencies();
     sum += TU_create_huffman_tree_from_LSC();
-    sum += TU_build_dico()
+    sum += TU_build_dico();
 
     if (sum == number_of_test)
     {
@@ -264,7 +264,6 @@ int For_rule_them_all(int number_of_test)
 
 void Test(FILE* text_to_convert, FILE* compress, FILE* decompress, FILE* non_compress, char* texte_path, char* compress_path, char* decompress_path, char* non_compress_path)
 {
-    printf("%s", texte_path);
     OPEN(text_to_convert, texte_path, "r")
     OPEN(compress, compress_path, "r")
     OPEN(non_compress, non_compress_path, "r")

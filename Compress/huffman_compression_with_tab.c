@@ -312,6 +312,62 @@ void huffman_compression_in_same_file_with_xfactor(FILE* text_to_compress, FILE*
 }
 
 /**
+ * @brief Create a huffman tree based on the dictionary
+ * 
+ * @param compress The compress files with, in first line, the dictionary
+ * @return Node* The created Node of the huffman tree
+ */
+Node* create_huffman_tree_from_dictionary(FILE* compress)
+{
+    //Create the root
+    Node* tree = create_node(0, 0, NULL, NULL);
+    Node* root = (Node*)malloc(sizeof(Node));
+    root = tree;
+
+    int alpha = 0;
+    do{
+        alpha = fgetc(compress);
+
+        if(alpha != '\n')
+        {
+            int ascii;
+            char code[50];
+            fscanf(compress, "%d:%s", &ascii, code);
+            //printf("ascci = %d ; code = %s", ascii, code);
+
+            int i = 0;
+            while(code[i] != '\0')
+            {
+                if(code[i] == '0')
+                {
+                    if(tree->left == NULL){
+                        tree->left = create_node(0, 0, NULL, NULL);
+                    }
+                    tree = tree->left;
+                }
+
+                else if(code[i]=='1')
+                {
+                    if(tree->right == NULL){
+                        tree->right = create_node(0, 0, NULL, NULL);
+                    }
+                    tree = tree->right;
+                }
+                i++;
+            }
+
+            tree->ascii = ascii;
+            tree->frequenc = 0;
+
+            tree = root; // return to the root of the tree
+        }
+
+    }while(alpha != '\n');
+
+    return tree;
+}
+
+/**
  * @brief Decompress a file in an other fil via a tree
  * 
  * @param tree The Huffman tree

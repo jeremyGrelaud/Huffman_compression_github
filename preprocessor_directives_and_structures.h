@@ -16,7 +16,6 @@
 
 /// Paths to Files
 #define Alice "Files/alice.txt"
-#define Compress "Files/compress.txt"
 #define Texte_test "Files/texte_test.txt"
 
 /// Constants
