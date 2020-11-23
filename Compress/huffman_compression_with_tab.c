@@ -4,6 +4,15 @@
 
 #include "huffman_compression_with_tab.h"
 
+/**
+ * @brief Create a node object
+ * 
+ * @param ascii Code ascii
+ * @param frequency The frequency
+ * @param leftp The left child
+ * @param rightp The right child
+ * @return Node* The Node created
+ */
 Node* create_node(int ascii, int frequency, Node* leftp, Node* rightp)
 {
     Node* new_node = (Node*)malloc(sizeof(Node));
@@ -15,6 +24,11 @@ Node* create_node(int ascii, int frequency, Node* leftp, Node* rightp)
     return new_node;
 }
 
+/**
+ * @brief Free a tree
+ * 
+ * @param tree The root of the tree
+ */
 void free_tree(Node* tree)
 {
     if(tree != NULL)
@@ -25,7 +39,12 @@ void free_tree(Node* tree)
     }
 }
 
-
+/**
+ * @brief Count the frequencies of each character present in a File and stock them in an array
+ * 
+ * @param fichier The file
+ * @return int* An array with all the frequencies
+ */
 int* frequencies(FILE* fichier)
 {
     int* tabFrenquencies = (int*)malloc(NUMBER_OF_ASCII * sizeof(int));
@@ -45,6 +64,12 @@ int* frequencies(FILE* fichier)
     return tabFrenquencies;
 }
 
+/**
+ * @brief Create a Huffman tree via the frequencies
+ * 
+ * @param tabFrequencies The array with the frequencies
+ * @return Node* The Node of the Huffman tree
+ */
 Node* build_huffman_tree(int* tabFrequencies)
 {
     Element* new_elem = NULL;
@@ -73,7 +98,12 @@ Node* build_huffman_tree(int* tabFrequencies)
 
 /// List functions
 
-// sorts the linked list by changing next pointers (not data)
+/**
+ * @brief sorts the linked list by changing next pointers (not data)
+ * 
+ * @param headRef 
+ * @return * void 
+ */ 
 void MergeSort(Element** headRef)
 {
     Element* head = *headRef;
@@ -134,6 +164,12 @@ Element* SortedMerge(Element* a, Element* b)
     return (result);
 }
 
+/**
+ * @brief Remove the first Element of a list
+ * 
+ * @param head The first Element
+ * @return Element* The new first Element
+ */
 Element* remove_first_elem(Element** head)
 {
     if (*head == NULL){
@@ -147,6 +183,12 @@ Element* remove_first_elem(Element** head)
     }
 }
 
+/**
+ * @brief Create a huffman tree from LSC object
+ * 
+ * @param head The first Element of the list 
+ * @return Node* The root of the Huffman tree
+ */
 Node* create_huffman_tree_from_LSC(Element* head)
 {
     Element* temp1;
@@ -168,11 +210,17 @@ Node* create_huffman_tree_from_LSC(Element* head)
 
     }while(head->next != NULL);//tant que la liste contient 2 elements ou plus
 
-    return head->data; //contient un Node* qui est la racine de l'arbre créer
+    return head->data; //contient un Node* qui est la racine de l'arbre crï¿½er
 }
 
 /// Compression functions
 
+/**
+ * @brief Count the depth of a tree
+ * 
+ * @param tree The tree analyzed
+ * @return int The depth of the tree
+ */
 int depth(Node* tree)
 {
     if(tree == NULL){ //on considere qu'il a une profondeur de 0
@@ -191,6 +239,14 @@ int depth(Node* tree)
  //attention dans son prog un abrre null a quand meme une profondeur de 1
 }//il a defini la profondeur comme le nbr de niveaux
 
+/**
+ * @brief Build a dictionary from a tree
+ * 
+ * @param tree The tree used to create the dictionary
+ * @param tabDictionary The character of the dictionary
+ * @param arr Thee tab with binary code of each character
+ * @param top A counter
+ */
 void build_dico(Node* tree, char** tabDictionary, unsigned char arr[], int top)
 {
     // Assign 0 to left edge and recur
@@ -215,6 +271,13 @@ void build_dico(Node* tree, char** tabDictionary, unsigned char arr[], int top)
     }
 }
 
+/**
+ * @brief Compress a file in an other file
+ * 
+ * @param text_to_compress File with the text we need to compress
+ * @param compress File with the text compress
+ * @param tabDictionary The dictionary in the dile with the text compress
+ */
 void huffman_compression_in_same_file_with_xfactor(FILE* text_to_compress, FILE* compress, char** tabDictionary)
 {
     for(int i=0 ; i<NUMBER_OF_ASCII ; i++)
@@ -250,6 +313,12 @@ void huffman_compression_in_same_file_with_xfactor(FILE* text_to_compress, FILE*
 
 }
 
+/**
+ * @brief Create a huffman tree from dictionary object
+ * 
+ * @param compress The file with the dictionary
+ * @return Node* The root of the Huffman tree
+ */
 Node* create_huffman_tree_from_dictionary(FILE* compress)
 {
     //Create the root
@@ -300,6 +369,13 @@ Node* create_huffman_tree_from_dictionary(FILE* compress)
     return tree;
 }
 
+/**
+ * @brief Decompress a file in an other fil via a tree
+ * 
+ * @param tree The Huffman tree
+ * @param compress The compressed file
+ * @param decompress The decompressed file
+ */
 void huffman_decompression_with_xfactor(Node* tree, FILE* compress, FILE* decompress)
 {
     int actual;
@@ -340,6 +416,11 @@ void huffman_decompression_with_xfactor(Node* tree, FILE* compress, FILE* decomp
 
 /// Print
 
+/**
+ * @brief Print a tree in the prefixe order
+ * 
+ * @param tree The tree printed
+ */
 void print_tree_prefixe(Node* tree)
 {
     if(tree != NULL)
@@ -350,6 +431,11 @@ void print_tree_prefixe(Node* tree)
     }
 }
 
+/**
+ * @brief Print a list
+ * 
+ * @param debut The first Element of the list
+ */
 void printList(Element* debut)
 {
     Element *temp = debut;
@@ -363,6 +449,14 @@ void printList(Element* debut)
 
 /// Final functions
 
+/**
+ * @brief Compress the file with the path of each file : the one we compress and the compressed one
+ * 
+ * @param text_to_convert The file we compress
+ * @param compress The compressed file
+ * @param texte_path The path of the file we compress
+ * @param compress_path The path of the compressed file
+ */
 void compression(FILE* text_to_convert, FILE* compress, char* texte_path, char* compress_path)
 {
     printf("Compression ... \t");
@@ -406,6 +500,14 @@ void compression(FILE* text_to_convert, FILE* compress, char* texte_path, char* 
     printf("Compression achieve ^_^ That was fast ! \n");
 }
 
+/**
+ * @brief Decompress the file with the path of each file : the one we decompress and the decompressed one
+ * 
+ * @param compress The file we decompress
+ * @param decompress The decompressed file
+ * @param compress_path The path of the file we decompress
+ * @param decompress_path The path of the decompressed file
+ */
 void decompression(FILE* compress, FILE* decompress, char* compress_path, char* decompress_path)
 {
     printf("Decompression ...\t");
