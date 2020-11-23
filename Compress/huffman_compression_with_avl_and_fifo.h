@@ -7,14 +7,6 @@ typedef struct Queue {
     Element* data_queue;
 }Queue;
 
-Queue* create_queue();
-int is_empty(Queue* q);
-int isSizeOne(Queue* q);
-void enqueue(Queue* q, Node* new_node);
-Node* dequeue(Queue* q);
-Node* findMin(Queue* firstQueue, Queue* secondQueue);
-Node* create_huffman_tree_FIFO(Node** tab, int size_tab);
-
 //the new structure for the AVL = balanced binary search tree
 typedef struct Node_AVL{
     unsigned char charac;
@@ -22,6 +14,14 @@ typedef struct Node_AVL{
     struct Node_AVL* left;
     struct Node_AVL* right;
 }Node_AVL;
+
+Queue* create_queue();
+int is_empty(Queue* q);
+int isSizeOne(Queue* q);
+void enqueue(Queue* q, Node* new_node);
+Node* dequeue(Queue* q);
+Node* findMin(Queue* firstQueue, Queue* secondQueue);
+Node* create_huffman_tree_FIFO(Node** tab, int size_tab);
 
 Node_AVL* create_node_avl(int ascii, char* huffman_code,int taille);
 void add_node_bst(Node_AVL** tree, Node_AVL* new_node);

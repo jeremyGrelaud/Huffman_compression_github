@@ -1,9 +1,7 @@
-// Created by amaur on 18/11/2020.
+#ifndef UNIT_TESTS_H
+#define UNIT_TESTS_H
 
-#ifndef MY_HUFFMAN_UNIT_TESTS_H
-#define MY_HUFFMAN_UNIT_TESTS_H
-
-#include "Compress/huffman_compression_with_tab.h"
+#include "../Compress/huffman_compression_with_tab.h"
 
 int number_of_caracters(FILE*);
 
@@ -17,4 +15,4 @@ int For_rule_them_all(int);
 void Test(FILE*, FILE*, FILE*, FILE*, char*, char*, char*, char*);
 void Test_without_non_compress(FILE*, FILE*, FILE*, char*, char*, char*);
 
-#endif //MY_HUFFMAN_UNIT_TESTS_H
+#endif //UNIT_TESTS_H

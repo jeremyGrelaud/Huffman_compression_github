@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "path.h"
+#include "../Unit_tests/unit_tests.h"
 
 int one_letter(FILE* file)  // return 1 if there s only one type of char; return 0 else
 {

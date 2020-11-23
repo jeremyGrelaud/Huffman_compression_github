@@ -1,12 +1,7 @@
-//
-// Created by amaur on 18/11/2020.
-//
-
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "Unit_tests.h"
-
+#include "unit_tests.h"
 
 int number_of_caracters(FILE* fichier)
 {

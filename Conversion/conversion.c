@@ -3,6 +3,7 @@
 #include <math.h> // for pow function
 
 #include "conversion.h"
+#include "../preprocessor_directives_and_structures.h"
 
 void convert_10_to_base_octet(int number, int base, char* numberInBinary)
 {
@@ -35,8 +36,11 @@ int convert_octet_to_base_10(char* numberInBinary, int base)
     return number;
 }
 
-void convert_file_in_binary(FILE* text, FILE* text_in_binary)
+void convert_file_in_binary(FILE* text, FILE* text_in_binary, char* path, char* non_compress_path)
 {
+    OPEN(text,path,"r")
+    OPEN(text_in_binary,non_compress_path,"w")
+
     int actualCharact = 0;
     do{
         actualCharact = fgetc(text); // we read the character
@@ -49,7 +53,7 @@ void convert_file_in_binary(FILE* text, FILE* text_in_binary)
             convert_10_to_base_octet(actualCharact, 2, charact_convert); // conversion in base 2
 
             for(int i=0 ; i<8 ; i++){
-                fprintf(text_in_binary, "%d", charact_convert[i]); // add it in bianry file
+                fprintf(text_in_binary, "%d", charact_convert[i]); // add it in binary file
             }
 
             free(charact_convert);
@@ -57,11 +61,17 @@ void convert_file_in_binary(FILE* text, FILE* text_in_binary)
 
     }while (actualCharact != EOF);
 
+    fclose(text);
+    fclose(text_in_binary);
+
 }
 
 
-void convert_binary_in_file(FILE* text_in_binary, FILE* text_convert)
+void convert_binary_in_file(FILE* text_in_binary, FILE* text_convert, char* non_compress_path,  char* non_compress_decompress_path)
 {
+    OPEN(text_in_binary,non_compress_path,"r")
+    OPEN(text_convert,non_compress_decompress_path,"w")
+
     int compteur = 0, charactAscii = 0, actualCharact = 0;
     char* binary_number = (char*)malloc(8 * sizeof(char));
 
@@ -90,5 +100,8 @@ void convert_binary_in_file(FILE* text_in_binary, FILE* text_convert)
     }while(actualCharact != EOF);
 
     free(binary_number);
+
+    fclose(text_in_binary);
+    fclose(text_convert);
 
 }

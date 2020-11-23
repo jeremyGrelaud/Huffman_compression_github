@@ -12,8 +12,6 @@
 
 #include "Files/path.h"
 
-
-
 int main()
 {
     printf("\t--- Projet Huffmam - Version Gui! ---\n\n");
@@ -28,8 +26,32 @@ int main()
     char decompress_path[200];
     char non_compress_path[200];
 
+    ///version with avl
     if (ask_path(path) == 0)
     {
+        build_non_compress_path(path, non_compress_path);
+        convert_file_in_binary(text_to_convert, non_compress, path, non_compress_path);
+        printf("Creation of %s\n\n", non_compress_path);
+
+        build_compress_path(path, compress_path);
+        compression_avl(text_to_convert, compress, path, compress_path);
+        printf("Creation of %s\n\n", compress_path);
+
+        build_decompress_path(compress_path, decompress_path);
+        decompression(compress, decompress, compress_path, decompress_path);
+        printf("Creation of %s\n", decompress_path);
+
+        Test(text_to_convert, compress, decompress, non_compress, path,compress_path, decompress_path, non_compress_path);
+    }
+
+    ///version with tab
+    /*
+    if (ask_path(path) == 0)
+    {
+        build_non_compress_path(path, non_compress_path);
+        convert_file_in_binary(text_to_convert, non_compress, path, non_compress_path);
+        printf("Creation of %s\n", non_compress_path);
+
         build_compress_path(path, compress_path);
         compression(text_to_convert, compress, path, compress_path);
         printf("Creation of %s\n", compress_path);
@@ -38,8 +60,10 @@ int main()
         decompression(compress, decompress, compress_path, decompress_path);
         printf("Creation of %s\n", decompress_path);
 
-        Test_without_non_compress(text_to_convert, compress, decompress, path, compress_path, decompress_path);
-  }
+        Test(text_to_convert, compress, decompress, non_compress, path,compress_path, decompress_path, non_compress_path);
+    }
+
+    */
 
     return 0;
 }

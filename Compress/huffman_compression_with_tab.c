@@ -202,19 +202,17 @@ Node* create_huffman_tree_from_LSC(Element* head)
 
         Element* new_elem = (Element*)malloc(sizeof(Element));
         new_elem->data = create_node(0, temp1->data->frequenc + temp2->data->frequenc, temp1->data, temp2->data);
-        new_elem->next = head; //on le met en tete de liste puis on va retrier
+        new_elem->next = head; //it points on the actual head of the list
 
-        head = new_elem; //la nouvelle tete de liste
-        //mtn il faut retrier la liste
+        head = new_elem; //it becomes the new head
         MergeSort(&head);
 
-    }while(head->next != NULL);//tant que la liste contient 2 elements ou plus
+    }while(head->next != NULL);//we continue while the list contains 2 elements or more
 
-    return head->data; //contient un Node* qui est la racine de l'arbre cr�er
+    return head->data; //contains a Node* wich is the root of the huffman tree we create
 }
 
 /// Compression functions
-
 /**
  * @brief Count the depth of a tree
  * 
@@ -223,7 +221,7 @@ Node* create_huffman_tree_from_LSC(Element* head)
  */
 int depth(Node* tree)
 {
-    if(tree == NULL){ //on considere qu'il a une profondeur de 0
+    if(tree == NULL){ //we consider a depth of 0
         return 0;
     }
     else{
@@ -232,12 +230,11 @@ int depth(Node* tree)
         if(left_depth > right_depth){
             return 1 + left_depth;
         }
-        else{ //pcq dans le cas egal c pareil que l on prenne gauche ou droite
+        else{ //in this case it's the same if we take left or right
             return 1 + right_depth;
         }
     }
- //attention dans son prog un abrre null a quand meme une profondeur de 1
-}//il a defini la profondeur comme le nbr de niveaux
+}
 
 /**
  * @brief Build a dictionary from a tree
@@ -265,7 +262,7 @@ void build_dico(Node* tree, char** tabDictionary, unsigned char arr[], int top)
     if ((tree->left == NULL) && (tree->right == NULL))
     {
         arr[top] = '\0';
-        tabDictionary[tree->ascii] = (char*)malloc(top * sizeof(char));
+        tabDictionary[tree->ascii] = (char*)malloc((top+1) * sizeof(char));
         strcpy(tabDictionary[tree->ascii], (const char*)arr);
         //printf("%c, %s\n", tree->ascii, tabDictionary[tree->ascii]);
     }
