@@ -30,7 +30,7 @@ int isSizeOne(Queue* q) {
 
 //we add at the end and remove at the beginning = FIFO
 void enqueue(Queue* q, Node* new_node) {
-    //ajout � la fin
+    //add at the end
     Element* n_e = (Element*)malloc(sizeof(Element));
     n_e->data = new_node;
     n_e->next = NULL;
