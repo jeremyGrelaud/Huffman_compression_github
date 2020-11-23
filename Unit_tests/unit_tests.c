@@ -174,12 +174,81 @@ int TU_decompression(Node* new_huffman_tree, FILE* compress, FILE* decompress, F
     return 1;
 }
 
+int TU_build_dico()
+{
+    Node* true_tree = NULL;
+    Node* node1 = NULL;
+    Node* node2 = NULL;
+    Node* node3 = NULL;
+    Node* node4 = NULL;
+    Node* node5 = NULL;
+    Node* node6 = NULL;
+    node6 = create_node('E', 1, NULL, NULL);
+    node5 = create_node('A', 1, NULL, NULL);
+    node4 = create_node(0, 2, node5, node6);
+    node3 = create_node('T', 1, NULL, NULL);
+    node1 = create_node(0, 3, node3, node4);
+    node2 = create_node('S', 3, NULL, NULL);
+    true_tree = create_node(0, 6, node1, node2);
+
+    unsigned char* arr = (unsigned char*)malloc(4 * sizeof(unsigned char));
+
+    char** tab_dico_true = NULL;
+    tab_dico_true = (char**)malloc(NUMBER_OF_ASCII * sizeof(char*));
+    char** tab_dico_test = NULL;
+    tab_dico_test = (char**)malloc(NUMBER_OF_ASCII * sizeof(char*));
+
+    for(int i = 0 ; i<NUMBER_OF_ASCII ; i++){
+        tab_dico_true[i] = NULL;
+        tab_dico_test[i] = NULL;
+    }
+
+
+    tab_dico_true[65] = (char*)malloc((3+1) * sizeof(char));
+    tab_dico_true[65] ="010";
+
+    tab_dico_true[69] = (char*)malloc((3+1) * sizeof(char));
+    tab_dico_true[69] ="011";
+
+    tab_dico_true[83] = (char*)malloc((1+1) * sizeof(char));
+    tab_dico_true[83] ="1";
+
+    tab_dico_true[84] = (char*)malloc((2+1) * sizeof(char));
+    tab_dico_true[84] ="00";
+
+    build_dico(true_tree, tab_dico_test, arr, 0);
+
+    for(int i = 0; i<NUMBER_OF_ASCII; i++)
+    {
+        if(tab_dico_true[i] == NULL){
+            if(tab_dico_test[i] != NULL){
+                return 0;
+            }
+        }
+
+        if(tab_dico_test[i] == NULL){
+            if(tab_dico_true[i] != NULL){
+                return 0;
+            }
+        }
+
+        else{
+            //printf("%d -> tab_dico_test : %s - %s : tab_dico_true\n",i, tab_dico_test[i], tab_dico_true[i]);
+            if(strcmp(tab_dico_test[i], tab_dico_true[i]) != 0){
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
 int For_rule_them_all(int number_of_test)
 {
     int sum = 0;
     //sum += TU_convert_10_to_base_octet();
     sum += TU_frequencies();
     sum += TU_create_huffman_tree_from_LSC();
+    sum += TU_build_dico()
 
     if (sum == number_of_test)
     {
