@@ -4,8 +4,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "unit_tests.h"
-#include "huffman_compression_with_tab.h"
+
+#include "Unit_tests.h"
+
 
 int number_of_caracters(FILE* fichier)
 {
@@ -199,6 +200,7 @@ int For_rule_them_all(int number_of_test)
 
 void Test(FILE* text_to_convert, FILE* compress, FILE* decompress, FILE* non_compress, char* texte_path, char* compress_path, char* decompress_path, char* non_compress_path)
 {
+    printf("%s", texte_path);
     OPEN(text_to_convert, texte_path, "r")
     OPEN(compress, compress_path, "r")
     OPEN(non_compress, non_compress_path, "r")

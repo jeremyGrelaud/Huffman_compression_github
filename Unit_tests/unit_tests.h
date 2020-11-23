@@ -2,9 +2,9 @@
 
 #ifndef MY_HUFFMAN_UNIT_TESTS_H
 #define MY_HUFFMAN_UNIT_TESTS_H
-#include "huffman_compression_with_tab.h"
 
-// Unit tests
+#include "Compress/huffman_compression_with_tab.h"
+
 int number_of_caracters(FILE*);
 
 int TU_convert_10_to_base_octet();

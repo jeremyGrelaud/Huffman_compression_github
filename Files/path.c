@@ -1,14 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#include "others.h"
-/**
- * @brief Return 1 if there s only one type of char; return 0 else
- * 
- * @param file The text analyzed
- * @return int 1 or 0
- */
-int one_letter(FILE* file) 
+#include "path.h"
+
+int one_letter(FILE* file)  // return 1 if there s only one type of char; return 0 else
 {
     char fst_letter;
     char letter;
@@ -61,6 +57,8 @@ int ask_path(char* path)
         }
     }while(continuer);
 
+    return continuer;
+
 }
 
 void build_compress_path(char* path, char* compress_path)
@@ -79,3 +77,10 @@ void build_decompress_path(char* compress_path, char* decompress_path)
     strcat(decompress_path, "_decomp.txt");
 }
 
+void build_non_compress_path(char* path, char* non_compress_path)
+{
+    int size = strlen(path);
+    strcpy(non_compress_path, path);
+    non_compress_path[size-4] = '\0';
+    strcat(non_compress_path, "_binary.txt");
+}
