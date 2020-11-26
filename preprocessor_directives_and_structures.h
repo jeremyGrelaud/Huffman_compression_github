@@ -35,5 +35,16 @@ typedef struct Element{
     struct Element *next;
 }Element;
 
+typedef struct Queue {
+    Element* data_queue;
+}Queue;
+
+//the new structure for the AVL = balanced binary search tree
+typedef struct Node_AVL{
+    unsigned char charac;
+    char* huffman_code;
+    struct Node_AVL* left;
+    struct Node_AVL* right;
+}Node_AVL;
 
 #endif // PREPROCESSOR_DIRECTIVES_AND_STRUCTURES_H_INCLUDED

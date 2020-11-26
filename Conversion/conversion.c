@@ -5,7 +5,7 @@
 #include "conversion.h"
 #include "../preprocessor_directives_and_structures.h"
 
-void convert_10_to_base_octet(int number, int base, char* numberInBinary)
+void convert_10_to_base_octet(int number, int base, unsigned char* numberInBinary)
 {
     char* numberInWrongBinary = (char*)malloc(8 * sizeof(char));
     int quotient = 0, reste = 0;
@@ -26,7 +26,7 @@ void convert_10_to_base_octet(int number, int base, char* numberInBinary)
 
 }
 
-int convert_octet_to_base_10(char* numberInBinary, int base)
+int convert_octet_to_base_10(unsigned char* numberInBinary, int base)
 {
     int number = 0;
     for(int i=0 ; i<8 ; i++){

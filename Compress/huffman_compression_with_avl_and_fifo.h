@@ -3,17 +3,6 @@
 
 #include "../preprocessor_directives_and_structures.h"
 
-typedef struct Queue {
-    Element* data_queue;
-}Queue;
-
-//the new structure for the AVL = balanced binary search tree
-typedef struct Node_AVL{
-    unsigned char charac;
-    char* huffman_code;
-    struct Node_AVL* left;
-    struct Node_AVL* right;
-}Node_AVL;
 
 Queue* create_queue();
 int is_empty(Queue* q);

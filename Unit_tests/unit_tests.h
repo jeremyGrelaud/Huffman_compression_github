@@ -2,6 +2,7 @@
 #define UNIT_TESTS_H
 
 #include "../Compress/huffman_compression_with_tab.h"
+#include "../preprocessor_directives_and_structures.h"
 
 int number_of_caracters(FILE*);
 
