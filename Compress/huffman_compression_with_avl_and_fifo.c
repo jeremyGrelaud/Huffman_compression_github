@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "huffman_compression_with_avl_and_fifo.h"
+#include "huffman_compression_with_tab.h"
 
 /**
  * @brief Create a queue object
@@ -152,7 +154,8 @@ Node* create_huffman_tree_FIFO(Node** tab, int size_tab)
         // Step 4: Create a new node with frequency
         // equal to the sum of the two nodes frequencies.
         // Enqueue this node to second queue.
-        top = create_node('0', left_node->frequenc + right_node->frequenc, left_node, right_node);
+        top = create_node(0, left_node->frequenc + right_node->frequenc, left_node, right_node);
+
         enqueue(secondQueue, top);
 
     }
