@@ -11,6 +11,8 @@ int TU_create_huffman_tree_from_LSC();
 int TU_frequencies();
 int TU_decompression(Node* new_huffman_tree, FILE* compress, FILE* decompress, FILE* original_file);
 int TU_build_dico();
+int TU_build_dico_and_avl();
+int compare_AVL(Node_AVL*,Node_AVL*);
 
 int For_rule_them_all(int);
 void Test(FILE*, FILE*, FILE*, FILE*, char*, char*, char*, char*);

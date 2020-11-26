@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "Compress/huffman_compression_with_avl_and_fifo.h"
 #include "unit_tests.h"
 
 int number_of_caracters(FILE* fichier)
@@ -243,6 +244,88 @@ int TU_build_dico()
     return 1;
 }
 
+int compare_AVL(Node_AVL* tree1, Node_AVL* tree2)
+{
+    if(tree1 == NULL && tree2 == NULL)
+    {
+        return 1;
+    }
+    else if(tree1 == NULL || tree2 == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        //printf("%d, %d; %s, %s;",tree1->charac,tree2->charac,tree1->huffman_code,tree2->huffman_code);
+
+        if(tree1->charac != tree2->charac || strcmp(tree1->huffman_code, tree2->huffman_code)!=0 )
+        {
+            return ( 0 ); //&& compare(tree1->left, tree2->left) && compare(tree1->right, tree2->right) );
+        }
+        else
+        {
+            return ( compare_AVL(tree1->left, tree2->left) && compare_AVL(tree1->right, tree2->right) );
+        }
+
+    }
+
+}
+
+int TU_build_dico_and_avl()
+{
+    Node* true_tree = NULL;
+    Node* node1 = NULL;
+    Node* node2 = NULL;
+    Node* node3 = NULL;
+    Node* node4 = NULL;
+    Node* node5 = NULL;
+    Node* node6 = NULL;
+    node6 = create_node('E', 1, NULL, NULL);
+    node5 = create_node('A', 1, NULL, NULL);
+    node4 = create_node(0, 2, node5, node6);
+    node3 = create_node('T', 1, NULL, NULL);
+    node1 = create_node(0, 3, node3, node4);
+    node2 = create_node('S', 3, NULL, NULL);
+    true_tree = create_node(0, 6, node1, node2);
+
+    Node_AVL* node_avl1 = NULL;
+    Node_AVL* node_avl2 = NULL;
+    Node_AVL* node_avl3 = NULL;
+    Node_AVL* node_avl4 = NULL;
+
+    char code1[3] = {0,1,1};
+    char code2[3] = {0,1,0};
+    char code3[2] = {0,0};
+    char code4[1] = {1};
+
+    node_avl4 = create_node_avl('S',code4,1);
+    node_avl3 = create_node_avl('T',code3,2);
+    node_avl2 = create_node_avl('A',code2,3);
+    node_avl1 = create_node_avl('E', code1 ,3);
+
+    node_avl4->left = NULL;
+    node_avl4->right = NULL;
+    node_avl3->left = node_avl4;
+    node_avl3->right = NULL;
+    node_avl2->left = NULL;
+    node_avl2->right = NULL;
+    node_avl1->left = node_avl2;
+    node_avl1->right = node_avl3;
+
+    Node_AVL* avl_tree = NULL;
+
+    FILE* dico_tasses = NULL;
+    OPEN(dico_tasses, "TU_build_dico_and_avl.txt", "w")
+
+    char* arr = (char*)malloc(4 * sizeof(char));
+
+    build_dico_and_avl(true_tree, &avl_tree, dico_tasses, arr, 0);
+
+    int a = compare_AVL(node_avl1, avl_tree);
+    return a;
+
+}
+
 int For_rule_them_all(int number_of_test)
 {
     int sum = 0;
@@ -250,6 +333,7 @@ int For_rule_them_all(int number_of_test)
     sum += TU_frequencies();
     sum += TU_create_huffman_tree_from_LSC();
     sum += TU_build_dico();
+    sum += TU_build_dico_and_avl();
 
     if (sum == number_of_test)
     {
