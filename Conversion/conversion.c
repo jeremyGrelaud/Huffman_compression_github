@@ -49,7 +49,7 @@ void convert_file_in_binary(FILE* text, FILE* text_in_binary, char* path, char* 
         {
             //AFF(actualCharact, "actualCharact") // print Ascii number of the actual character
 
-            char* charact_convert = (char*)malloc(8 * sizeof(char));
+            unsigned char* charact_convert = (unsigned char*)malloc(8 * sizeof(unsigned char));
             convert_10_to_base_octet(actualCharact, 2, charact_convert); // conversion in base 2
 
             for(int i=0 ; i<8 ; i++){
@@ -73,7 +73,7 @@ void convert_binary_in_file(FILE* text_in_binary, FILE* text_convert, char* non_
     OPEN(text_convert,non_compress_decompress_path,"w")
 
     int compteur = 0, charactAscii = 0, actualCharact = 0;
-    char* binary_number = (char*)malloc(8 * sizeof(char));
+    unsigned char* binary_number = (unsigned char*)malloc(8 * sizeof(unsigned char));
 
     do{
         actualCharact = fgetc(text_in_binary); // we read the character -> it is 48 if it is 0 and 49 if it is 1
