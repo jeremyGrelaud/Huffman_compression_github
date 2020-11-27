@@ -3,7 +3,7 @@
  * @author Guillaume DUMAS.
  * @brief Regroup all preprocessor directives and structures.
  * @version 1.5
- * @date 2020-10-09
+ * @date 2020-10-24
  * 
  * @copyright Copyright (c) 2020
  * 

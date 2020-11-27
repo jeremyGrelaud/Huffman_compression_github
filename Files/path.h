@@ -3,7 +3,7 @@
  * @author Julien HASSOUN, Jeremy GRELAUD, Amaury ROSSIGNOL, Gauthier MARCELIN, Guillaume DUMAS.
  * @brief Regroup all the function to build path for the file.
  * @version 1.2
- * @date 2020-11-03
+ * @date 2020-11-20
  * 
  * @copyright Copyright (c) 2020
  * 

@@ -3,7 +3,7 @@
  * @author Julien HASSOUN, Jeremy GRELAUD, Amaury ROSSIGNOL, Gauthier MARCELIN, Guillaume DUMAS.
  * @brief Regroup all the function to compress with an array.
  * @version 2.7
- * @date 2020-10-13
+ * @date 2020-11-13
  * 
  * @copyright Copyright (c) 2020
  * 
