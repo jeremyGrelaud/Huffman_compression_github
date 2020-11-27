@@ -5,23 +5,14 @@
 #include "huffman_compression_with_avl_and_fifo.h"
 #include "huffman_compression_with_tab.h"
 
-/**
- * @brief Create a queue object
- * 
- * @return Queue* 
- */
+
 Queue* create_queue() {
     Queue* q = (Queue*)malloc(sizeof(Queue));
     q->data_queue = NULL;
     return q;
 }
 
-/**
- * @brief Check if a queue is empty or not
- * 
- * @param q The queue
- * @return int A booléen
- */
+
 int is_empty(Queue* q) {
     if (q->data_queue == NULL) {
         return 1; //there queue is empty
@@ -31,12 +22,7 @@ int is_empty(Queue* q) {
     }
 }
 
-/**
- * @brief Check if the queue is at minimum size 1
- * 
- * @param q The queue
- * @return int A booléen
- */
+
 int isSizeOne(Queue* q) {
     if ((q->data_queue != NULL) && (q->data_queue->next == NULL)) {
         return 1;
@@ -46,12 +32,7 @@ int isSizeOne(Queue* q) {
     }
 }
 
-/**
- * @brief Add a node at the end of the queue
- * 
- * @param q The queue
- * @param new_node The node added
- */
+
 void enqueue(Queue* q, Node* new_node) {
     //add at the end
     Element* n_e = (Element*)malloc(sizeof(Element));
@@ -71,12 +52,7 @@ void enqueue(Queue* q, Node* new_node) {
     }
 }
 
-/**
- * @brief Remove a node at the beginning
- * 
- * @param q The queue
- * @return Node* The node deleted
- */
+
 Node* dequeue(Queue* q) {
     //remove at the beginning
     if (is_empty(q) == 1) {
@@ -92,13 +68,6 @@ Node* dequeue(Queue* q) {
 }
 
 
-/**
- * @brief Get the node with the lowest frequency from two queues //
- * 
- * @param firstQueue The first queue
- * @param secondQueue The second queue
- * @return Node* The node with the lowest frequency
- */
 Node* findMin(Queue* firstQueue, Queue* secondQueue)
 {
     // If first queue is empty, dequeue from
@@ -122,13 +91,7 @@ Node* findMin(Queue* firstQueue, Queue* secondQueue)
     }
 }
 
-/**
- * @brief Create a huffman tree from atab of node
- * 
- * @param tab Tab of node
- * @param size_tab The size of the tab
- * @return Node* The root
- */
+
 Node* create_huffman_tree_FIFO(Node** tab, int size_tab)
 {
     Node* left_node, * right_node, * top;
@@ -163,13 +126,7 @@ Node* create_huffman_tree_FIFO(Node** tab, int size_tab)
 }
 
 
-/**
- * @brief Create a node avl object
- *
- * @param ascii The code ascii of the character
- * @param huffman_code The huffman code
- * @return Node_AVL* A node of the AVL
- */
+
 Node_AVL* create_node_avl(int ascii, char* huffman_code,int taille)
 {
     Node_AVL* new_node = (Node_AVL*)malloc(sizeof(Node_AVL));
@@ -193,12 +150,7 @@ Node_AVL* create_node_avl(int ascii, char* huffman_code,int taille)
     return new_node;
 }
 
-/**
- * @brief Add a node to a search binary tree
- * 
- * @param tree The binary search tree
- * @param new_node The new node
- */
+
 void add_node_bst(Node_AVL** tree, Node_AVL* new_node){
     if(*tree == NULL){
         *tree = new_node;
@@ -211,23 +163,13 @@ void add_node_bst(Node_AVL** tree, Node_AVL* new_node){
     }
 }
 
-/**
- * @brief Add a node to an AVL
- * 
- * @param tree The AVL
- * @param new_node The new node
- */
+
 void add_node_avl(Node_AVL** tree, Node_AVL* new_node){
     add_node_bst(tree, new_node);
     trees_balance_BST(tree);
 }
 
-/**
- * @brief Count the depth of an AVL
- * 
- * @param tree The AVL
- * @return int The depth
- */
+
 int depth_AVL(Node_AVL* tree){
     if(tree == NULL){
         return 0;
@@ -244,12 +186,7 @@ int depth_AVL(Node_AVL* tree){
     }
 }
 
-/**
- * @brief Give the balance factor of an AVL
- * 
- * @param tree The AVL
- * @return int The balance factor
- */
+
 int balance_factor(Node_AVL* tree){
     if(tree == NULL){
         return 0;
@@ -278,11 +215,7 @@ void l_rot(Node_AVL** tree){
     }
 }
 
-/**
- * @brief Balance an AVL via the balance factor
- * 
- * @param tree The AVL
- */
+
 void trees_balance_BST(Node_AVL** tree){
 
     if((*tree)!= NULL){ //we start from the bottom to balance the deepest nodes it correspond to post-fix traversal
@@ -305,15 +238,7 @@ void trees_balance_BST(Node_AVL** tree){
     }
 }
 
-/**
- * @brief Build a dico and an AVL via a huffman tree
- * 
- * @param huffman_tree The huffman tree
- * @param avl_tree The AVL we gonna build
- * @param compress The dictionary we gonna build (empty file)
- * @param arr The tab of each character 
- * @param top The size we increment
- */
+
 void build_dico_and_avl(Node* huffman_tree, Node_AVL** avl_tree, FILE* compress, char arr[], int top)
 {
     // Assign 0 to left edge and recur
@@ -341,13 +266,8 @@ void build_dico_and_avl(Node* huffman_tree, Node_AVL** avl_tree, FILE* compress,
         }
     }
 }
-/**
- * @brief Run through the AVL to find the huffman code of the character
- * 
- * @param tree The AVL
- * @param actualCharacter The character
- * @return char* The huffman code
- */
+
+
 char* traversal_avl(Node_AVL* tree, int actualCharacter)
 {
     if(tree != NULL)
@@ -364,13 +284,7 @@ char* traversal_avl(Node_AVL* tree, int actualCharacter)
     }
 }
 
-/**
- * @brief Compress in the file of the dictionary with the xfactor of the AVL
- * 
- * @param text_to_compress The text we gonna compress
- * @param compress The compressed text
- * @param huffman_avl The AVL create via the huffman tree
- */
+
 void huffman_compression_in_same_file_with_xfactor_avl(FILE* text_to_compress, FILE* compress, Node_AVL* huffman_avl)
 {
     fputc('\n', compress); // for the version where the dictionary is just before the compress text
@@ -401,11 +315,7 @@ void huffman_compression_in_same_file_with_xfactor_avl(FILE* text_to_compress, F
     }while(actualCharacter != EOF);
 }
 
-/**
- * @brief Free an AVL
- * 
- * @param tree The AVL
- */
+
 void free_tree_avl(Node_AVL* tree)
 {
     if(tree != NULL)
@@ -416,11 +326,7 @@ void free_tree_avl(Node_AVL* tree)
     }
 }
 
-/**
- * @brief Print an AVL in the infixe order
- * 
- * @param tree The AVL
- */
+
 void print_tree_infixe_avl(Node_AVL* tree)
 {
     if(tree != NULL)
@@ -435,14 +341,7 @@ void print_tree_infixe_avl(Node_AVL* tree)
     }
 }
 
-/**
- * @brief Compress a text to another file
- * 
- * @param text_to_convert The text we gonna compress
- * @param compress The compressed text
- * @param texte_path The path of the file we gonna compress
- * @param compress_path The path of the compressed text
- */
+
 void compression_avl(FILE* text_to_convert, FILE* compress, char* texte_path, char* compress_path)
 {
     printf("Compression ... \t");
