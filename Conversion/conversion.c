@@ -8,7 +8,7 @@
 void convert_10_to_base_octet(int number, int base, unsigned char* numberInBinary)
 {
     char* numberInWrongBinary = (char*)malloc(8 * sizeof(char));
-    int quotient = 0, reste = 0;
+    int quotient, reste;
 
     for(int i=0 ; i<8 ; i++) // conversion from base 10 in base base
     {
@@ -72,7 +72,7 @@ void convert_binary_in_file(FILE* text_in_binary, FILE* text_convert, char* non_
     OPEN(text_in_binary,non_compress_path,"r")
     OPEN(text_convert,non_compress_decompress_path,"w")
 
-    int compteur = 0, charactAscii = 0, actualCharact = 0;
+    int compteur = 0, charactAscii, actualCharact;
     unsigned char* binary_number = (unsigned char*)malloc(8 * sizeof(unsigned char));
 
     do{
