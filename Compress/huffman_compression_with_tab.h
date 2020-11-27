@@ -1,3 +1,13 @@
+/*************************************************//**
+ * @file huffman_compression_with_tab.h
+ * @author Julien HASSOUN, Jeremy GRELAUD, Amaury ROSSIGNOL, Gauthier MARCELIN, Guillaume DUMAS.
+ * @brief Regroup all the function to compress with an array.
+ * @version 0.1
+ * @date 2020-11-27
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ ****************************************************/
 #ifndef HUFFMAN_COMPRESSION_WITH_TAB_H_INCLUDED
 #define HUFFMAN_COMPRESSION_WITH_TAB_H_INCLUDED
 

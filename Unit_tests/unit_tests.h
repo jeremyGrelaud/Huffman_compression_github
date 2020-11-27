@@ -1,3 +1,13 @@
+/********************************************************//**
+ * @file unit_tests.h
+ * @author Jeremy GRELAUD, Amaury ROSSIGNOL.
+ * @brief Regroup all the units tests.
+ * @version 0.1
+ * @date 2020-11-27
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ ***********************************************************/
 #ifndef UNIT_TESTS_H
 #define UNIT_TESTS_H
 

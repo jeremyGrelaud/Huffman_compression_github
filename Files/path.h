@@ -1,3 +1,13 @@
+/***********************************************************//**
+ * @file path.h
+ * @author Julien HASSOUN, Jeremy GRELAUD, Amaury ROSSIGNOL, Gauthier MARCELIN, Guillaume DUMAS.
+ * @brief Regroup all the function to build path for the file.
+ * @version 0.1
+ * @date 2020-11-27
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ **************************************************************/
 #ifndef PATH_H_INCLUDED
 #define PATH_H_INCLUDED
 
