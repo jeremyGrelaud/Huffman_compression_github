@@ -273,7 +273,7 @@ Node* create_huffman_tree_from_dictionary(FILE* compress)
         {
             int ascii;
             char code[50];
-            fscanf(compress, "%d:%s", &ascii, code);
+            fscanf(compress, "%d:%50s", &ascii, code);
             //printf("ascci = %d ; code = %s", ascii, code);
 
             int i = 0;
