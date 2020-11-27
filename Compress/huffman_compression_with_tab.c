@@ -304,7 +304,8 @@ Node* create_huffman_tree_from_dictionary(FILE* compress)
         }
 
     }while(alpha != '\n');
-
+    
+    free(root);
     return tree;
 }
 
@@ -425,7 +426,7 @@ void decompression(FILE* compress, FILE* decompress, char* compress_path, char* 
 
     OPEN(compress, compress_path, "r")
 
-    Node* new_huffman_tree = (Node*)malloc(sizeof(Node));
+    Node* new_huffman_tree = NULL;
     new_huffman_tree = create_huffman_tree_from_dictionary(compress);
     //print_tree_prefixe(new_huffman_tree);
 
