@@ -22,12 +22,13 @@ int main()
     FILE* non_compress = NULL;
 
     char path[] = "";
-    char compress_path[200];
-    char decompress_path[200];
-    char non_compress_path[200];
-
+    
     if (ask_path(path) == 0)
     {
+        char compress_path[200];
+        char decompress_path[200];
+        char non_compress_path[200];
+        
         build_non_compress_path(path, non_compress_path);
         printf("\nCreation of %s\n", non_compress_path);
         convert_file_in_binary(text_to_convert, non_compress, path, non_compress_path);
