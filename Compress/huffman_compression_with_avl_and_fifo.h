@@ -2,8 +2,8 @@
  * @file huffman_compression_with_avl_and_fifo.h
  * @author Julien HASSOUN, Jérémy GRELAUD, Amaury ROSSIGNOL, Gauthier MARCELIN, Guillaume DUMAS.
  * @brief Regroup all the function to compress with an AVL and Queue.
- * @version 0.1
- * @date 2020-11-27
+ * @version 03.2
+ * @date 2020-10-24
  * 
  * @copyright Copyright (c) 2020
  * 

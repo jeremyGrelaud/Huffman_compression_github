@@ -2,8 +2,8 @@
  * @file conversion.h
  * @author Julien HASSOUN, Jeremy GRELAUD, Amaury ROSSIGNOL, Gauthier MARCELIN, Guillaume DUMAS.
  * @brief Regroup all the function to convert.
- * @version 0.1
- * @date 2020-11-27
+ * @version 0.8
+ * @date 2020-10-27
  * 
  * @copyright Copyright (c) 2020
  * 

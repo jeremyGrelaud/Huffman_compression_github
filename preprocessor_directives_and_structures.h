@@ -2,8 +2,8 @@
  * @file preprocessor_directives_and_structures.h
  * @author Guillaume DUMAS.
  * @brief Regroup all preprocessor directives and structures.
- * @version 0.1
- * @date 2020-11-27
+ * @version 1.5
+ * @date 2020-10-09
  * 
  * @copyright Copyright (c) 2020
  * 
