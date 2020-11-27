@@ -1,3 +1,13 @@
+/**************************************************//**
+ * @file conversion.h
+ * @author Julien HASSOUN, Jeremy GRELAUD, Amaury ROSSIGNOL, Gauthier MARCELIN, Guillaume DUMAS.
+ * @brief Regroup all the function to convert.
+ * @version 0.1
+ * @date 2020-11-27
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ *****************************************************/
 #ifndef CONVERSION_H_INCLUDED
 #define CONVERSION_H_INCLUDED
 
