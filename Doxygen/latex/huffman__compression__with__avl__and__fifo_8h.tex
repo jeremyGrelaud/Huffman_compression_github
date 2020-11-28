@@ -1,0 +1,553 @@
+\hypertarget{huffman__compression__with__avl__and__fifo_8h}{}\doxysection{Compress/huffman\+\_\+compression\+\_\+with\+\_\+avl\+\_\+and\+\_\+fifo.h File Reference}
+\label{huffman__compression__with__avl__and__fifo_8h}\index{Compress/huffman\_compression\_with\_avl\_and\_fifo.h@{Compress/huffman\_compression\_with\_avl\_and\_fifo.h}}
+
+
+Regroup all the function to compress with an A\+VL and \mbox{\hyperlink{struct_queue}{Queue}}.  
+
+
+{\ttfamily \#include \char`\"{}../preprocessor\+\_\+directives\+\_\+and\+\_\+structures.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_queue}{Queue}} $\ast$ \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_aa296117bcedb9224a67b5390233a71d1}{create\+\_\+queue}} ()
+\begin{DoxyCompactList}\small\item\em Create a queue object. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a4e1d7ce234daed76d54bc60ad8f8ce5a}{is\+\_\+empty}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Check if a queue is empty or not. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a5db6a14303fe824874ed111b49dc3c13}{is\+Size\+One}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Check if the queue is at minimum size 1. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_aaf3ed24202c240ac8cb889358522dd1a}{enqueue}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q, \mbox{\hyperlink{struct_node}{Node}} $\ast$new\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Add a node at the end of the queue. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_aba9aaacf01625e22a00a3b9bbd02980f}{dequeue}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Remove a node at the beginning. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a456d763228f0e5f3827f8eff2ec3fbc8}{find\+Min}} (\mbox{\hyperlink{struct_queue}{Queue}} $\ast$first\+Queue, \mbox{\hyperlink{struct_queue}{Queue}} $\ast$second\+Queue)
+\begin{DoxyCompactList}\small\item\em Get the node with the lowest frequency from two queues. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a75d7d3a38da0c468f62a542a275c9afb}{create\+\_\+huffman\+\_\+tree\+\_\+\+F\+I\+FO}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$tab, int size\+\_\+tab)
+\begin{DoxyCompactList}\small\item\em Create a huffman tree from atab of node. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$ \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a45b4a7101d2ebb8a1412ce98207e60ad}{create\+\_\+node\+\_\+avl}} (int ascii, char $\ast$huffman\+\_\+code, int taille)
+\begin{DoxyCompactList}\small\item\em Create a node avl object. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_adb07590c42c02240d0d52a97e9c35378}{add\+\_\+node\+\_\+bst}} (\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$$\ast$tree, \mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$new\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Add a node to a search binary tree. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a7516b583a84cfa0719ee05873fe39f69}{add\+\_\+node\+\_\+avl}} (\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$$\ast$tree, \mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$new\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Add a node to an A\+VL. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a5b0024035e79c40877912ce695e198eb}{depth\+\_\+\+A\+VL}} (\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em Count the depth of an A\+VL. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_af63ef1f8a7f1d736602898e08edf8279}{balance\+\_\+factor}} (\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em Give the balance factor of an A\+VL. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a9573f1862d7d35fc5d36bf9b282bae0c}\label{huffman__compression__with__avl__and__fifo_8h_a9573f1862d7d35fc5d36bf9b282bae0c}} 
+void \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a9573f1862d7d35fc5d36bf9b282bae0c}{r\+\_\+rot}} (\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$$\ast$tree)
+\begin{DoxyCompactList}\small\item\em right rotation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a7e4e86e3610363b31ba9505c46675195}\label{huffman__compression__with__avl__and__fifo_8h_a7e4e86e3610363b31ba9505c46675195}} 
+void \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a7e4e86e3610363b31ba9505c46675195}{l\+\_\+rot}} (\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$$\ast$tree)
+\begin{DoxyCompactList}\small\item\em left rotation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_af895d5ff90c41c0bad7c304efca69358}{trees\+\_\+balance\+\_\+\+B\+ST}} (\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$$\ast$tree)
+\begin{DoxyCompactList}\small\item\em Balance an A\+VL via the balance factor. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a5c8a0cd5ecf040b161b62436c8c59b03}{build\+\_\+dico\+\_\+and\+\_\+avl}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$huffman\+\_\+tree, \mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$$\ast$avl\+\_\+tree, F\+I\+LE $\ast$compress, char arr\mbox{[}$\,$\mbox{]}, int top)
+\begin{DoxyCompactList}\small\item\em Build a dico and an A\+VL via a huffman tree. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a05e239d2de2bf79d0f9c8aa58e40435b}{print\+\_\+tree\+\_\+infixe\+\_\+avl}} (\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em Print an A\+VL in the infixe order. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a78ed6113317fefe733dd514a86573556}{traversal\+\_\+avl}} (\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$tree, int actual\+Character)
+\begin{DoxyCompactList}\small\item\em Run through the A\+VL to find the huffman code of the character. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a90c8fbb09025089146a706873e0bf4e2}{huffman\+\_\+compression\+\_\+in\+\_\+same\+\_\+file\+\_\+with\+\_\+xfactor\+\_\+avl}} (F\+I\+LE $\ast$text\+\_\+to\+\_\+convert, F\+I\+LE $\ast$compress, \mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$huffman\+\_\+avl)
+\begin{DoxyCompactList}\small\item\em Compress in the file of the dictionary with the xfactor of the A\+VL. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a2062622a85bd67f9415d9be6c47876d1}{compression\+\_\+avl}} (F\+I\+LE $\ast$text\+\_\+to\+\_\+convert, F\+I\+LE $\ast$compress, char $\ast$texte\+\_\+path, char $\ast$compress\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Compress a text to another file. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_ab1e380b471a0f3a3705f2d3345241243}{free\+\_\+tree\+\_\+avl}} (\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em Free an A\+VL. ~\newline
+ Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Regroup all the function to compress with an A\+VL and \mbox{\hyperlink{struct_queue}{Queue}}. 
+
+\begin{DoxyAuthor}{Author}
+Julien H\+A\+S\+S\+O\+UN, Jérémy G\+R\+E\+L\+A\+UD, Amaury R\+O\+S\+S\+I\+G\+N\+OL, Gauthier M\+A\+R\+C\+E\+L\+IN, Guillaume D\+U\+M\+AS. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+3.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2020-\/11-\/15
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a7516b583a84cfa0719ee05873fe39f69}\label{huffman__compression__with__avl__and__fifo_8h_a7516b583a84cfa0719ee05873fe39f69}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!add\_node\_avl@{add\_node\_avl}}
+\index{add\_node\_avl@{add\_node\_avl}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{add\_node\_avl()}{add\_node\_avl()}}
+{\footnotesize\ttfamily void add\+\_\+node\+\_\+avl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$$\ast$}]{tree,  }\item[{\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$}]{new\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Add a node to an A\+VL. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a7516b583a84cfa0719ee05873fe39f69}{add\_node\_avl}}(avl\_tree, \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a45b4a7101d2ebb8a1412ce98207e60ad}{create\_node\_avl}}(huffman\_tree-\/>ascii, arr, top));}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The A\+VL. \\
+\hline
+{\em new\+\_\+node} & The new node. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_adb07590c42c02240d0d52a97e9c35378}\label{huffman__compression__with__avl__and__fifo_8h_adb07590c42c02240d0d52a97e9c35378}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!add\_node\_bst@{add\_node\_bst}}
+\index{add\_node\_bst@{add\_node\_bst}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{add\_node\_bst()}{add\_node\_bst()}}
+{\footnotesize\ttfamily void add\+\_\+node\+\_\+bst (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$$\ast$}]{tree,  }\item[{\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$}]{new\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Add a node to a search binary tree. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_adb07590c42c02240d0d52a97e9c35378}{add\_node\_bst}}(tree, new\_node);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The binary search tree. \\
+\hline
+{\em new\+\_\+node} & The new node. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_af63ef1f8a7f1d736602898e08edf8279}\label{huffman__compression__with__avl__and__fifo_8h_af63ef1f8a7f1d736602898e08edf8279}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!balance\_factor@{balance\_factor}}
+\index{balance\_factor@{balance\_factor}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{balance\_factor()}{balance\_factor()}}
+{\footnotesize\ttfamily int balance\+\_\+factor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+Give the balance factor of an A\+VL. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        \textcolor{keywordtype}{int} bfact = \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_af63ef1f8a7f1d736602898e08edf8279}{balance\_factor}}(*tree);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The A\+VL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The balance factor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a5c8a0cd5ecf040b161b62436c8c59b03}\label{huffman__compression__with__avl__and__fifo_8h_a5c8a0cd5ecf040b161b62436c8c59b03}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!build\_dico\_and\_avl@{build\_dico\_and\_avl}}
+\index{build\_dico\_and\_avl@{build\_dico\_and\_avl}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{build\_dico\_and\_avl()}{build\_dico\_and\_avl()}}
+{\footnotesize\ttfamily void build\+\_\+dico\+\_\+and\+\_\+avl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{huffman\+\_\+tree,  }\item[{\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$$\ast$}]{avl\+\_\+tree,  }\item[{F\+I\+LE $\ast$}]{compress,  }\item[{char}]{arr\mbox{[}$\,$\mbox{]},  }\item[{int}]{top }\end{DoxyParamCaption})}
+
+
+
+Build a dico and an A\+VL via a huffman tree. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a5c8a0cd5ecf040b161b62436c8c59b03}{build\_dico\_and\_avl}}(huffman\_tree-\/>left, avl\_tree, compress, arr, top + 1);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em huffman\+\_\+tree} & The huffman tree. \\
+\hline
+{\em avl\+\_\+tree} & The A\+VL we gonna build. \\
+\hline
+{\em compress} & The dictionary we gonna build (empty file). \\
+\hline
+{\em arr} & The tab of each character. \\
+\hline
+{\em top} & The size we increment. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a2062622a85bd67f9415d9be6c47876d1}\label{huffman__compression__with__avl__and__fifo_8h_a2062622a85bd67f9415d9be6c47876d1}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!compression\_avl@{compression\_avl}}
+\index{compression\_avl@{compression\_avl}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{compression\_avl()}{compression\_avl()}}
+{\footnotesize\ttfamily void compression\+\_\+avl (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{text\+\_\+to\+\_\+convert,  }\item[{F\+I\+LE $\ast$}]{compress,  }\item[{char $\ast$}]{texte\+\_\+path,  }\item[{char $\ast$}]{compress\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Compress a text to another file. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a2062622a85bd67f9415d9be6c47876d1}{compression\_avl}}(text\_to\_convert, compress, path, compress\_path);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em text\+\_\+to\+\_\+convert} & The text we gonna compress. \\
+\hline
+{\em compress} & The compressed text. \\
+\hline
+{\em texte\+\_\+path} & The path of the file we gonna compress. \\
+\hline
+{\em compress\+\_\+path} & The path of the compressed text. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a75d7d3a38da0c468f62a542a275c9afb}\label{huffman__compression__with__avl__and__fifo_8h_a75d7d3a38da0c468f62a542a275c9afb}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!create\_huffman\_tree\_FIFO@{create\_huffman\_tree\_FIFO}}
+\index{create\_huffman\_tree\_FIFO@{create\_huffman\_tree\_FIFO}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{create\_huffman\_tree\_FIFO()}{create\_huffman\_tree\_FIFO()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ create\+\_\+huffman\+\_\+tree\+\_\+\+F\+I\+FO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$}]{tab,  }\item[{int}]{size\+\_\+tab }\end{DoxyParamCaption})}
+
+
+
+Create a huffman tree from atab of node. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        huffman\_tree = \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a75d7d3a38da0c468f62a542a275c9afb}{create\_huffman\_tree\_FIFO}}(tab2,nbcharacter);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tab} & Tab of node. \\
+\hline
+{\em size\+\_\+tab} & The size of the tab. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$ The root. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a45b4a7101d2ebb8a1412ce98207e60ad}\label{huffman__compression__with__avl__and__fifo_8h_a45b4a7101d2ebb8a1412ce98207e60ad}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!create\_node\_avl@{create\_node\_avl}}
+\index{create\_node\_avl@{create\_node\_avl}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{create\_node\_avl()}{create\_node\_avl()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}}$\ast$ create\+\_\+node\+\_\+avl (\begin{DoxyParamCaption}\item[{int}]{ascii,  }\item[{char $\ast$}]{huffman\+\_\+code,  }\item[{int}]{taille }\end{DoxyParamCaption})}
+
+
+
+Create a node avl object. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a7516b583a84cfa0719ee05873fe39f69}{add\_node\_avl}}(avl\_tree, \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a45b4a7101d2ebb8a1412ce98207e60ad}{create\_node\_avl}}(huffman\_tree-\/>ascii, arr, top));}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em ascii} & The code ascii of the character. \\
+\hline
+{\em huffman\+\_\+code} & The huffman code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node\+\_\+\+A\+V\+L$\ast$ A node of the A\+VL. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_aa296117bcedb9224a67b5390233a71d1}\label{huffman__compression__with__avl__and__fifo_8h_aa296117bcedb9224a67b5390233a71d1}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!create\_queue@{create\_queue}}
+\index{create\_queue@{create\_queue}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{create\_queue()}{create\_queue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_queue}{Queue}}$\ast$ create\+\_\+queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create a queue object. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        \mbox{\hyperlink{struct_queue}{Queue}}* firstQueue = \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_aa296117bcedb9224a67b5390233a71d1}{create\_queue}}();}
+\end{DoxyCode}
+ \begin{DoxyReturn}{Returns}
+The queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a5b0024035e79c40877912ce695e198eb}\label{huffman__compression__with__avl__and__fifo_8h_a5b0024035e79c40877912ce695e198eb}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!depth\_AVL@{depth\_AVL}}
+\index{depth\_AVL@{depth\_AVL}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{depth\_AVL()}{depth\_AVL()}}
+{\footnotesize\ttfamily int depth\+\_\+\+A\+VL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+Count the depth of an A\+VL. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        \textcolor{keywordtype}{int} left\_depth = \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a5b0024035e79c40877912ce695e198eb}{depth\_AVL}}(tree-\/>left);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The A\+VL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The depth. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_aba9aaacf01625e22a00a3b9bbd02980f}\label{huffman__compression__with__avl__and__fifo_8h_aba9aaacf01625e22a00a3b9bbd02980f}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{dequeue()}{dequeue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ dequeue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_queue}{Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Remove a node at the beginning. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a4e1d7ce234daed76d54bc60ad8f8ce5a}{is\_empty}}(firstQueue))}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_aba9aaacf01625e22a00a3b9bbd02980f}{dequeue}}(secondQueue);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em q} & The queue. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$ The node deleted. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_aaf3ed24202c240ac8cb889358522dd1a}\label{huffman__compression__with__avl__and__fifo_8h_aaf3ed24202c240ac8cb889358522dd1a}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily void enqueue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_queue}{Queue}} $\ast$}]{q,  }\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{new\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Add a node at the end of the queue. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_aaf3ed24202c240ac8cb889358522dd1a}{enqueue}}(secondQueue, top);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em q} & The queue. \\
+\hline
+{\em new\+\_\+node} & The node added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a456d763228f0e5f3827f8eff2ec3fbc8}\label{huffman__compression__with__avl__and__fifo_8h_a456d763228f0e5f3827f8eff2ec3fbc8}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!findMin@{findMin}}
+\index{findMin@{findMin}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{findMin()}{findMin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ find\+Min (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_queue}{Queue}} $\ast$}]{first\+Queue,  }\item[{\mbox{\hyperlink{struct_queue}{Queue}} $\ast$}]{second\+Queue }\end{DoxyParamCaption})}
+
+
+
+Get the node with the lowest frequency from two queues. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        left\_node = \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a456d763228f0e5f3827f8eff2ec3fbc8}{findMin}}(firstQueue, secondQueue);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em first\+Queue} & The first queue. \\
+\hline
+{\em second\+Queue} & The second queue. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$ The node with the lowest frequency. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_ab1e380b471a0f3a3705f2d3345241243}\label{huffman__compression__with__avl__and__fifo_8h_ab1e380b471a0f3a3705f2d3345241243}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!free\_tree\_avl@{free\_tree\_avl}}
+\index{free\_tree\_avl@{free\_tree\_avl}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{free\_tree\_avl()}{free\_tree\_avl()}}
+{\footnotesize\ttfamily void free\+\_\+tree\+\_\+avl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+Free an A\+VL. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_ab1e380b471a0f3a3705f2d3345241243}{free\_tree\_avl}}(huffman\_avl);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The A\+VL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a90c8fbb09025089146a706873e0bf4e2}\label{huffman__compression__with__avl__and__fifo_8h_a90c8fbb09025089146a706873e0bf4e2}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!huffman\_compression\_in\_same\_file\_with\_xfactor\_avl@{huffman\_compression\_in\_same\_file\_with\_xfactor\_avl}}
+\index{huffman\_compression\_in\_same\_file\_with\_xfactor\_avl@{huffman\_compression\_in\_same\_file\_with\_xfactor\_avl}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{huffman\_compression\_in\_same\_file\_with\_xfactor\_avl()}{huffman\_compression\_in\_same\_file\_with\_xfactor\_avl()}}
+{\footnotesize\ttfamily void huffman\+\_\+compression\+\_\+in\+\_\+same\+\_\+file\+\_\+with\+\_\+xfactor\+\_\+avl (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{text\+\_\+to\+\_\+convert,  }\item[{F\+I\+LE $\ast$}]{compress,  }\item[{\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$}]{huffman\+\_\+avl }\end{DoxyParamCaption})}
+
+
+
+Compress in the file of the dictionary with the xfactor of the A\+VL. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a90c8fbb09025089146a706873e0bf4e2}{huffman\_compression\_in\_same\_file\_with\_xfactor\_avl}}(text\_to\_convert, compress, huffman\_avl);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em text\+\_\+to\+\_\+compress} & The text we gonna compress. \\
+\hline
+{\em compress} & The compressed text. \\
+\hline
+{\em huffman\+\_\+avl} & The A\+VL create via the huffman tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a4e1d7ce234daed76d54bc60ad8f8ce5a}\label{huffman__compression__with__avl__and__fifo_8h_a4e1d7ce234daed76d54bc60ad8f8ce5a}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily int is\+\_\+empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_queue}{Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Check if a queue is empty or not. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a4e1d7ce234daed76d54bc60ad8f8ce5a}{is\_empty}}(firstQueue))}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_aba9aaacf01625e22a00a3b9bbd02980f}{dequeue}}(secondQueue);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em q} & The queue. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int A booléen. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a5db6a14303fe824874ed111b49dc3c13}\label{huffman__compression__with__avl__and__fifo_8h_a5db6a14303fe824874ed111b49dc3c13}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!isSizeOne@{isSizeOne}}
+\index{isSizeOne@{isSizeOne}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{isSizeOne()}{isSizeOne()}}
+{\footnotesize\ttfamily int is\+Size\+One (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_queue}{Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Check if the queue is at minimum size 1. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        \textcolor{keywordflow}{while} (!(\mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a4e1d7ce234daed76d54bc60ad8f8ce5a}{is\_empty}}(firstQueue) \&\& \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a5db6a14303fe824874ed111b49dc3c13}{isSizeOne}}(secondQueue))) \{}
+\DoxyCodeLine{            left\_node = \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a456d763228f0e5f3827f8eff2ec3fbc8}{findMin}}(firstQueue, secondQueue);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em q} & The queue. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int A booléen. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a05e239d2de2bf79d0f9c8aa58e40435b}\label{huffman__compression__with__avl__and__fifo_8h_a05e239d2de2bf79d0f9c8aa58e40435b}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!print\_tree\_infixe\_avl@{print\_tree\_infixe\_avl}}
+\index{print\_tree\_infixe\_avl@{print\_tree\_infixe\_avl}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{print\_tree\_infixe\_avl()}{print\_tree\_infixe\_avl()}}
+{\footnotesize\ttfamily void print\+\_\+tree\+\_\+infixe\+\_\+avl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+Print an A\+VL in the infixe order. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a05e239d2de2bf79d0f9c8aa58e40435b}{print\_tree\_infixe\_avl}}(tree-\/>right);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The A\+VL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_a78ed6113317fefe733dd514a86573556}\label{huffman__compression__with__avl__and__fifo_8h_a78ed6113317fefe733dd514a86573556}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!traversal\_avl@{traversal\_avl}}
+\index{traversal\_avl@{traversal\_avl}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{traversal\_avl()}{traversal\_avl()}}
+{\footnotesize\ttfamily char$\ast$ traversal\+\_\+avl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$}]{tree,  }\item[{int}]{actual\+Character }\end{DoxyParamCaption})}
+
+
+
+Run through the A\+VL to find the huffman code of the character. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         fprintf(compress, \textcolor{stringliteral}{"{}\%s"{}}, \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_a78ed6113317fefe733dd514a86573556}{traversal\_avl}}(huffman\_avl, actualCharacter));}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The A\+VL. \\
+\hline
+{\em actual\+Character} & The character. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ The huffman code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__avl__and__fifo_8h_af895d5ff90c41c0bad7c304efca69358}\label{huffman__compression__with__avl__and__fifo_8h_af895d5ff90c41c0bad7c304efca69358}} 
+\index{huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}!trees\_balance\_BST@{trees\_balance\_BST}}
+\index{trees\_balance\_BST@{trees\_balance\_BST}!huffman\_compression\_with\_avl\_and\_fifo.h@{huffman\_compression\_with\_avl\_and\_fifo.h}}
+\doxysubsubsection{\texorpdfstring{trees\_balance\_BST()}{trees\_balance\_BST()}}
+{\footnotesize\ttfamily void trees\+\_\+balance\+\_\+\+B\+ST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node___a_v_l}{Node\+\_\+\+A\+VL}} $\ast$$\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+Balance an A\+VL via the balance factor. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{        \mbox{\hyperlink{huffman__compression__with__avl__and__fifo_8h_af895d5ff90c41c0bad7c304efca69358}{trees\_balance\_BST}}(\&((*tree)-\/>left));}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The A\+VL. \\
+\hline
+\end{DoxyParams}

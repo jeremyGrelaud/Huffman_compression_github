@@ -1,0 +1,166 @@
+\hypertarget{path_8h}{}\doxysection{Files/path.h File Reference}
+\label{path_8h}\index{Files/path.h@{Files/path.h}}
+
+
+Regroup all the function to build path for the file.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{path_8h_a099b30cba2ef8dc1b5bf91b3ae6bd1b0}{one\+\_\+letter}} (F\+I\+LE $\ast$file)
+\begin{DoxyCompactList}\small\item\em Return 1 if there s only one type of char in the file or return 0 else. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{path_8h_ade8055f229e9496c9daed849567ee37b}{ask\+\_\+path}} (char $\ast$path)
+\begin{DoxyCompactList}\small\item\em Ask the path of a file. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{path_8h_ab4f9d715d23330d8b46670d60cf1383b}{build\+\_\+compress\+\_\+path}} (char $\ast$path, char $\ast$compress\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Create a path for the compressed file. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{path_8h_aa342d3cfdb88140f9380bee70676845e}{build\+\_\+decompress\+\_\+path}} (char $\ast$compress\+\_\+path, char $\ast$decompress\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Create a path for the decompressed file. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{path_8h_abad840cc2c681d5411419e2c2f035069}{build\+\_\+non\+\_\+compress\+\_\+path}} (char $\ast$path, char $\ast$non\+\_\+compress\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Create a path for the non compressed file. ~\newline
+ Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Regroup all the function to build path for the file. 
+
+\begin{DoxyAuthor}{Author}
+Julien H\+A\+S\+S\+O\+UN, Jeremy G\+R\+E\+L\+A\+UD, Amaury R\+O\+S\+S\+I\+G\+N\+OL, Gauthier M\+A\+R\+C\+E\+L\+IN, Guillaume D\+U\+M\+AS. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2020-\/11-\/20
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{path_8h_ade8055f229e9496c9daed849567ee37b}\label{path_8h_ade8055f229e9496c9daed849567ee37b}} 
+\index{path.h@{path.h}!ask\_path@{ask\_path}}
+\index{ask\_path@{ask\_path}!path.h@{path.h}}
+\doxysubsubsection{\texorpdfstring{ask\_path()}{ask\_path()}}
+{\footnotesize\ttfamily int ask\+\_\+path (\begin{DoxyParamCaption}\item[{char $\ast$}]{path }\end{DoxyParamCaption})}
+
+
+
+Ask the path of a file. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \textcolor{keywordflow}{if} (\mbox{\hyperlink{path_8h_ade8055f229e9496c9daed849567ee37b}{ask\_path}}(path) == 0)\{}
+\DoxyCodeLine{            \}}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em path} & The file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{path_8h_ab4f9d715d23330d8b46670d60cf1383b}\label{path_8h_ab4f9d715d23330d8b46670d60cf1383b}} 
+\index{path.h@{path.h}!build\_compress\_path@{build\_compress\_path}}
+\index{build\_compress\_path@{build\_compress\_path}!path.h@{path.h}}
+\doxysubsubsection{\texorpdfstring{build\_compress\_path()}{build\_compress\_path()}}
+{\footnotesize\ttfamily void build\+\_\+compress\+\_\+path (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{char $\ast$}]{compress\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Create a path for the compressed file. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{path_8h_ab4f9d715d23330d8b46670d60cf1383b}{build\_compress\_path}}(path, compress\_path);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em path} & The path of the file. \\
+\hline
+{\em compress\+\_\+path} & The path of the compressed file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{path_8h_aa342d3cfdb88140f9380bee70676845e}\label{path_8h_aa342d3cfdb88140f9380bee70676845e}} 
+\index{path.h@{path.h}!build\_decompress\_path@{build\_decompress\_path}}
+\index{build\_decompress\_path@{build\_decompress\_path}!path.h@{path.h}}
+\doxysubsubsection{\texorpdfstring{build\_decompress\_path()}{build\_decompress\_path()}}
+{\footnotesize\ttfamily void build\+\_\+decompress\+\_\+path (\begin{DoxyParamCaption}\item[{char $\ast$}]{compress\+\_\+path,  }\item[{char $\ast$}]{decompress\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Create a path for the decompressed file. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{path_8h_aa342d3cfdb88140f9380bee70676845e}{build\_decompress\_path}}(compress\_path, decompress\_path);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em compress\+\_\+path} & The path of the compressed file. \\
+\hline
+{\em decompress\+\_\+path} & The path of the decompressed file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{path_8h_abad840cc2c681d5411419e2c2f035069}\label{path_8h_abad840cc2c681d5411419e2c2f035069}} 
+\index{path.h@{path.h}!build\_non\_compress\_path@{build\_non\_compress\_path}}
+\index{build\_non\_compress\_path@{build\_non\_compress\_path}!path.h@{path.h}}
+\doxysubsubsection{\texorpdfstring{build\_non\_compress\_path()}{build\_non\_compress\_path()}}
+{\footnotesize\ttfamily void build\+\_\+non\+\_\+compress\+\_\+path (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{char $\ast$}]{non\+\_\+compress\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Create a path for the non compressed file. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{path_8h_abad840cc2c681d5411419e2c2f035069}{build\_non\_compress\_path}}(path, non\_compress\_path);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em path} & The path of the file. \\
+\hline
+{\em non\+\_\+compress\+\_\+path} & The path of the non compressed file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{path_8h_a099b30cba2ef8dc1b5bf91b3ae6bd1b0}\label{path_8h_a099b30cba2ef8dc1b5bf91b3ae6bd1b0}} 
+\index{path.h@{path.h}!one\_letter@{one\_letter}}
+\index{one\_letter@{one\_letter}!path.h@{path.h}}
+\doxysubsubsection{\texorpdfstring{one\_letter()}{one\_letter()}}
+{\footnotesize\ttfamily int one\+\_\+letter (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file }\end{DoxyParamCaption})}
+
+
+
+Return 1 if there s only one type of char in the file or return 0 else. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\mbox{\hyperlink{path_8h_a099b30cba2ef8dc1b5bf91b3ae6bd1b0}{one\_letter}}(test) == 1)\{}
+\DoxyCodeLine{                printf(\textcolor{stringliteral}{"{}It seems this file do exists, but only contains one different letter. It can't work. Try again ...\(\backslash\)n"{}});}
+\DoxyCodeLine{                continuer = 1;}
+\DoxyCodeLine{            \}}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em file} & The file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Booleen. 
+\end{DoxyReturn}

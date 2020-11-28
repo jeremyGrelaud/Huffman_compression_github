@@ -1,0 +1,478 @@
+\hypertarget{huffman__compression__with__tab_8h}{}\doxysection{Compress/huffman\+\_\+compression\+\_\+with\+\_\+tab.h File Reference}
+\label{huffman__compression__with__tab_8h}\index{Compress/huffman\_compression\_with\_tab.h@{Compress/huffman\_compression\_with\_tab.h}}
+
+
+Regroup all the function to compress with an array.  
+
+
+{\ttfamily \#include \char`\"{}../preprocessor\+\_\+directives\+\_\+and\+\_\+structures.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{huffman__compression__with__tab_8h_a010b3c915d4552baf3c5181444cc8f8a}{create\+\_\+node}} (int ascii, int frequency, \mbox{\hyperlink{struct_node}{Node}} $\ast$leftp, \mbox{\hyperlink{struct_node}{Node}} $\ast$rightp)
+\begin{DoxyCompactList}\small\item\em Create a node object. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__tab_8h_a9c279b328cb7c67769a162aa186522ea}{free\+\_\+tree}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em Free a tree. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+int $\ast$ \mbox{\hyperlink{huffman__compression__with__tab_8h_a3f76a8d26504568e6ea37ed5ad4d88ec}{frequencies}} (F\+I\+LE $\ast$fichier)
+\begin{DoxyCompactList}\small\item\em Count the frequencies of each character present in a File and stock them in an array. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{huffman__compression__with__tab_8h_a75b03ec3bbbd396de757ed96d29ec174}{build\+\_\+huffman\+\_\+tree}} (int $\ast$tab\+Frequencies)
+\begin{DoxyCompactList}\small\item\em Create a Huffman tree via the frequencies. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__tab_8h_ae2ca8001ae114df2f1b3e33c99e0e36d}{Merge\+Sort}} (\mbox{\hyperlink{struct_element}{Element}} $\ast$$\ast$head\+Ref)
+\begin{DoxyCompactList}\small\item\em sorts the linked list by changing next pointers (not data). ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_acac05d4d0adf1ad2e9daaa7ae47dd723}\label{huffman__compression__with__tab_8h_acac05d4d0adf1ad2e9daaa7ae47dd723}} 
+\mbox{\hyperlink{struct_element}{Element}} $\ast$ {\bfseries Sorted\+Merge} (\mbox{\hyperlink{struct_element}{Element}} $\ast$a, \mbox{\hyperlink{struct_element}{Element}} $\ast$b)
+\item 
+\mbox{\hyperlink{struct_element}{Element}} $\ast$ \mbox{\hyperlink{huffman__compression__with__tab_8h_ad3cdf78d2ce4a2ca3f6889d1d7af72c5}{remove\+\_\+first\+\_\+elem}} (\mbox{\hyperlink{struct_element}{Element}} $\ast$$\ast$head)
+\begin{DoxyCompactList}\small\item\em Remove the first \mbox{\hyperlink{struct_element}{Element}} of a list. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{huffman__compression__with__tab_8h_aea19c542fd8798bd9f3655464e4b6ed4}{create\+\_\+huffman\+\_\+tree\+\_\+from\+\_\+\+L\+SC}} (\mbox{\hyperlink{struct_element}{Element}} $\ast$head)
+\begin{DoxyCompactList}\small\item\em Create a huffman tree from L\+SC object. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{huffman__compression__with__tab_8h_a53c5cd655146eac314d2e93e48366d86}{depth}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em Count the depth of a tree. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__tab_8h_a718582a6ffdbb0c10ee4bb5948cd7b2a}{build\+\_\+dico}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree, char $\ast$$\ast$tab\+Dictionary, unsigned char arr\mbox{[}$\,$\mbox{]}, int top)
+\begin{DoxyCompactList}\small\item\em Build a dictionary from a tree. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__tab_8h_aef92bfd424a5744b9b26d1d113056f65}{huffman\+\_\+compression\+\_\+in\+\_\+same\+\_\+file\+\_\+with\+\_\+xfactor}} (F\+I\+LE $\ast$text\+\_\+to\+\_\+compress, F\+I\+LE $\ast$compress, char $\ast$$\ast$tab\+Dictionary)
+\begin{DoxyCompactList}\small\item\em Compress a file in an other file. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{huffman__compression__with__tab_8h_acf1d52cea54f2b01928509c856f11d9c}{create\+\_\+huffman\+\_\+tree\+\_\+from\+\_\+dictionary}} (F\+I\+LE $\ast$compress)
+\begin{DoxyCompactList}\small\item\em Create a huffman tree based on the dictionary. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__tab_8h_ae4ddcc1484317cb9fee759b840563a74}{huffman\+\_\+decompression\+\_\+with\+\_\+xfactor}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree, F\+I\+LE $\ast$compress, F\+I\+LE $\ast$decompress)
+\begin{DoxyCompactList}\small\item\em Decompress a file in an other fil via a tree. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__tab_8h_ae87ec1c77f36b23f930bbf3965438102}{print\+\_\+tree\+\_\+prefixe}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em Print a tree in the prefixe order. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__tab_8h_a1dee116708809617cb30c057188ba9f7}{print\+List}} (\mbox{\hyperlink{struct_element}{Element}} $\ast$debut)
+\begin{DoxyCompactList}\small\item\em Print a list. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__tab_8h_a57da8e659ebaec1f6865681736560bd6}{compression}} (F\+I\+LE $\ast$text\+\_\+to\+\_\+convert, F\+I\+LE $\ast$compress, char $\ast$texte\+\_\+path, char $\ast$compress\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Compress the file with the path of each file \+: the one we compress and the compressed one. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{huffman__compression__with__tab_8h_aff8db89159c2bc8a06b92629b3d8e19f}{decompression}} (F\+I\+LE $\ast$compress, F\+I\+LE $\ast$decompress, char $\ast$compress\+\_\+path, char $\ast$decompress\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Decompress the file with the path of each file \+: the one we decompress and the decompressed one. ~\newline
+ Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Regroup all the function to compress with an array. 
+
+\begin{DoxyAuthor}{Author}
+Julien H\+A\+S\+S\+O\+UN, Jeremy G\+R\+E\+L\+A\+UD, Amaury R\+O\+S\+S\+I\+G\+N\+OL, Gauthier M\+A\+R\+C\+E\+L\+IN, Guillaume D\+U\+M\+AS. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+7 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2020-\/11-\/13
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_a718582a6ffdbb0c10ee4bb5948cd7b2a}\label{huffman__compression__with__tab_8h_a718582a6ffdbb0c10ee4bb5948cd7b2a}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!build\_dico@{build\_dico}}
+\index{build\_dico@{build\_dico}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{build\_dico()}{build\_dico()}}
+{\footnotesize\ttfamily void build\+\_\+dico (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree,  }\item[{char $\ast$$\ast$}]{tab\+Dictionary,  }\item[{unsigned char}]{arr\mbox{[}$\,$\mbox{]},  }\item[{int}]{top }\end{DoxyParamCaption})}
+
+
+
+Build a dictionary from a tree. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__tab_8h_a718582a6ffdbb0c10ee4bb5948cd7b2a}{build\_dico}}(huffman\_tree, tabDictionary, arr, 0);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The tree used to create the dictionary. \\
+\hline
+{\em tab\+Dictionary} & The character of the dictionary. \\
+\hline
+{\em arr} & Thee tab with binary code of each character. \\
+\hline
+{\em top} & A counter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_a75b03ec3bbbd396de757ed96d29ec174}\label{huffman__compression__with__tab_8h_a75b03ec3bbbd396de757ed96d29ec174}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!build\_huffman\_tree@{build\_huffman\_tree}}
+\index{build\_huffman\_tree@{build\_huffman\_tree}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{build\_huffman\_tree()}{build\_huffman\_tree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ build\+\_\+huffman\+\_\+tree (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab\+Frequencies }\end{DoxyParamCaption})}
+
+
+
+Create a Huffman tree via the frequencies. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{struct_node}{Node}}* huffman\_tree = \mbox{\hyperlink{huffman__compression__with__tab_8h_a75b03ec3bbbd396de757ed96d29ec174}{build\_huffman\_tree}}(tab);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tab\+Frequencies} & The array with the frequencies. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$ The \mbox{\hyperlink{struct_node}{Node}} of the Huffman tree. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_a57da8e659ebaec1f6865681736560bd6}\label{huffman__compression__with__tab_8h_a57da8e659ebaec1f6865681736560bd6}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!compression@{compression}}
+\index{compression@{compression}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{compression()}{compression()}}
+{\footnotesize\ttfamily void compression (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{text\+\_\+to\+\_\+convert,  }\item[{F\+I\+LE $\ast$}]{compress,  }\item[{char $\ast$}]{texte\+\_\+path,  }\item[{char $\ast$}]{compress\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Compress the file with the path of each file \+: the one we compress and the compressed one. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__tab_8h_a57da8e659ebaec1f6865681736560bd6}{compression}}(text\_to\_convert, compress, path, compress\_path);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em text\+\_\+to\+\_\+convert} & The file we compress. \\
+\hline
+{\em compress} & The compressed file. \\
+\hline
+{\em texte\+\_\+path} & The path of the file we compress. \\
+\hline
+{\em compress\+\_\+path} & The path of the compressed file.\\
+\hline
+\end{DoxyParams}
+Compress the file with the path of each file \+: the one we compress and the compressed one. ~\newline
+ Example \+: \mbox{\Hypertarget{huffman__compression__with__tab_8h_acf1d52cea54f2b01928509c856f11d9c}\label{huffman__compression__with__tab_8h_acf1d52cea54f2b01928509c856f11d9c}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!create\_huffman\_tree\_from\_dictionary@{create\_huffman\_tree\_from\_dictionary}}
+\index{create\_huffman\_tree\_from\_dictionary@{create\_huffman\_tree\_from\_dictionary}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{create\_huffman\_tree\_from\_dictionary()}{create\_huffman\_tree\_from\_dictionary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ create\+\_\+huffman\+\_\+tree\+\_\+from\+\_\+dictionary (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{compress }\end{DoxyParamCaption})}
+
+
+
+Create a huffman tree based on the dictionary. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         new\_huffman\_tree = \mbox{\hyperlink{huffman__compression__with__tab_8h_acf1d52cea54f2b01928509c856f11d9c}{create\_huffman\_tree\_from\_dictionary}}(compress);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em compress} & The compress files with, in first line, the dictionary. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$ The created \mbox{\hyperlink{struct_node}{Node}} of the huffman tree. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_aea19c542fd8798bd9f3655464e4b6ed4}\label{huffman__compression__with__tab_8h_aea19c542fd8798bd9f3655464e4b6ed4}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!create\_huffman\_tree\_from\_LSC@{create\_huffman\_tree\_from\_LSC}}
+\index{create\_huffman\_tree\_from\_LSC@{create\_huffman\_tree\_from\_LSC}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{create\_huffman\_tree\_from\_LSC()}{create\_huffman\_tree\_from\_LSC()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ create\+\_\+huffman\+\_\+tree\+\_\+from\+\_\+\+L\+SC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element}{Element}} $\ast$}]{head }\end{DoxyParamCaption})}
+
+
+
+Create a huffman tree from L\+SC object. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         huffman\_tree = \mbox{\hyperlink{huffman__compression__with__tab_8h_aea19c542fd8798bd9f3655464e4b6ed4}{create\_huffman\_tree\_from\_LSC}}(new\_elem);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em head} & The first \mbox{\hyperlink{struct_element}{Element}} of the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$ The root of the Huffman tree. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_a010b3c915d4552baf3c5181444cc8f8a}\label{huffman__compression__with__tab_8h_a010b3c915d4552baf3c5181444cc8f8a}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!create\_node@{create\_node}}
+\index{create\_node@{create\_node}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{create\_node()}{create\_node()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ create\+\_\+node (\begin{DoxyParamCaption}\item[{int}]{ascii,  }\item[{int}]{frequency,  }\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{leftp,  }\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{rightp }\end{DoxyParamCaption})}
+
+
+
+Create a node object. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{struct_node}{Node}}* new\_node = \mbox{\hyperlink{huffman__compression__with__tab_8h_a010b3c915d4552baf3c5181444cc8f8a}{create\_node}}(i, tabFrequencies[i], NULL, NULL);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em ascii} & Code ascii. \\
+\hline
+{\em frequency} & The frequency. \\
+\hline
+{\em leftp} & The left child. \\
+\hline
+{\em rightp} & The right child. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$ The \mbox{\hyperlink{struct_node}{Node}} created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_aff8db89159c2bc8a06b92629b3d8e19f}\label{huffman__compression__with__tab_8h_aff8db89159c2bc8a06b92629b3d8e19f}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!decompression@{decompression}}
+\index{decompression@{decompression}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{decompression()}{decompression()}}
+{\footnotesize\ttfamily void decompression (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{compress,  }\item[{F\+I\+LE $\ast$}]{decompress,  }\item[{char $\ast$}]{compress\+\_\+path,  }\item[{char $\ast$}]{decompress\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Decompress the file with the path of each file \+: the one we decompress and the decompressed one. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__tab_8h_aff8db89159c2bc8a06b92629b3d8e19f}{decompression}}(compress, decompress, compress\_path, decompress\_path);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em compress} & The file we decompress. \\
+\hline
+{\em decompress} & The decompressed file. \\
+\hline
+{\em compress\+\_\+path} & The path of the file we decompress. \\
+\hline
+{\em decompress\+\_\+path} & The path of the decompressed file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_a53c5cd655146eac314d2e93e48366d86}\label{huffman__compression__with__tab_8h_a53c5cd655146eac314d2e93e48366d86}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!depth@{depth}}
+\index{depth@{depth}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{depth()}{depth()}}
+{\footnotesize\ttfamily int depth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+Count the depth of a tree. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \textcolor{keywordtype}{int} depth\_huffman\_tree = \mbox{\hyperlink{huffman__compression__with__tab_8h_a53c5cd655146eac314d2e93e48366d86}{depth}}(huffman\_tree);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The tree analyzed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The depth of the tree.
+\end{DoxyReturn}
+Count the depth of a tree. ~\newline
+ Example \+: \mbox{\Hypertarget{huffman__compression__with__tab_8h_a9c279b328cb7c67769a162aa186522ea}\label{huffman__compression__with__tab_8h_a9c279b328cb7c67769a162aa186522ea}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!free\_tree@{free\_tree}}
+\index{free\_tree@{free\_tree}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{free\_tree()}{free\_tree()}}
+{\footnotesize\ttfamily void free\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+Free a tree. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__tab_8h_a9c279b328cb7c67769a162aa186522ea}{free\_tree}}(huffman\_tree);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The root of the tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_a3f76a8d26504568e6ea37ed5ad4d88ec}\label{huffman__compression__with__tab_8h_a3f76a8d26504568e6ea37ed5ad4d88ec}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!frequencies@{frequencies}}
+\index{frequencies@{frequencies}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{frequencies()}{frequencies()}}
+{\footnotesize\ttfamily int$\ast$ frequencies (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fichier }\end{DoxyParamCaption})}
+
+
+
+Count the frequencies of each character present in a File and stock them in an array. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         tab = \mbox{\hyperlink{huffman__compression__with__tab_8h_a3f76a8d26504568e6ea37ed5ad4d88ec}{frequencies}}(text\_to\_convert);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em fichier} & The file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int$\ast$ An array with all the frequencies. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_aef92bfd424a5744b9b26d1d113056f65}\label{huffman__compression__with__tab_8h_aef92bfd424a5744b9b26d1d113056f65}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!huffman\_compression\_in\_same\_file\_with\_xfactor@{huffman\_compression\_in\_same\_file\_with\_xfactor}}
+\index{huffman\_compression\_in\_same\_file\_with\_xfactor@{huffman\_compression\_in\_same\_file\_with\_xfactor}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{huffman\_compression\_in\_same\_file\_with\_xfactor()}{huffman\_compression\_in\_same\_file\_with\_xfactor()}}
+{\footnotesize\ttfamily void huffman\+\_\+compression\+\_\+in\+\_\+same\+\_\+file\+\_\+with\+\_\+xfactor (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{text\+\_\+to\+\_\+compress,  }\item[{F\+I\+LE $\ast$}]{compress,  }\item[{char $\ast$$\ast$}]{tab\+Dictionary }\end{DoxyParamCaption})}
+
+
+
+Compress a file in an other file. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__tab_8h_aef92bfd424a5744b9b26d1d113056f65}{huffman\_compression\_in\_same\_file\_with\_xfactor}}(text\_to\_convert, compress, tabDictionary);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em text\+\_\+to\+\_\+compress} & File with the text we need to compress. \\
+\hline
+{\em compress} & File with the text compress. \\
+\hline
+{\em tab\+Dictionary} & The dictionary in the dile with the text compress. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_ae4ddcc1484317cb9fee759b840563a74}\label{huffman__compression__with__tab_8h_ae4ddcc1484317cb9fee759b840563a74}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!huffman\_decompression\_with\_xfactor@{huffman\_decompression\_with\_xfactor}}
+\index{huffman\_decompression\_with\_xfactor@{huffman\_decompression\_with\_xfactor}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{huffman\_decompression\_with\_xfactor()}{huffman\_decompression\_with\_xfactor()}}
+{\footnotesize\ttfamily void huffman\+\_\+decompression\+\_\+with\+\_\+xfactor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree,  }\item[{F\+I\+LE $\ast$}]{compress,  }\item[{F\+I\+LE $\ast$}]{decompress }\end{DoxyParamCaption})}
+
+
+
+Decompress a file in an other fil via a tree. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__tab_8h_ae4ddcc1484317cb9fee759b840563a74}{huffman\_decompression\_with\_xfactor}}(new\_huffman\_tree, compress, decompress);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The Huffman tree. \\
+\hline
+{\em compress} & The compressed file. \\
+\hline
+{\em decompress} & The decompressed file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_ae2ca8001ae114df2f1b3e33c99e0e36d}\label{huffman__compression__with__tab_8h_ae2ca8001ae114df2f1b3e33c99e0e36d}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!MergeSort@{MergeSort}}
+\index{MergeSort@{MergeSort}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{MergeSort()}{MergeSort()}}
+{\footnotesize\ttfamily void Merge\+Sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element}{Element}} $\ast$$\ast$}]{head\+Ref }\end{DoxyParamCaption})}
+
+
+
+sorts the linked list by changing next pointers (not data). ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__tab_8h_ae2ca8001ae114df2f1b3e33c99e0e36d}{MergeSort}}(\&head);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em head\+Ref} & The list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$ void
+\end{DoxyReturn}
+sorts the linked list by changing next pointers (not data). ~\newline
+ Example \+: \mbox{\Hypertarget{huffman__compression__with__tab_8h_ae87ec1c77f36b23f930bbf3965438102}\label{huffman__compression__with__tab_8h_ae87ec1c77f36b23f930bbf3965438102}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!print\_tree\_prefixe@{print\_tree\_prefixe}}
+\index{print\_tree\_prefixe@{print\_tree\_prefixe}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{print\_tree\_prefixe()}{print\_tree\_prefixe()}}
+{\footnotesize\ttfamily void print\+\_\+tree\+\_\+prefixe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+Print a tree in the prefixe order. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__tab_8h_ae87ec1c77f36b23f930bbf3965438102}{print\_tree\_prefixe}}(tree-\/>left);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em tree} & The tree printed.\\
+\hline
+\end{DoxyParams}
+Print a tree in the prefixe order. ~\newline
+ Example \+: \mbox{\Hypertarget{huffman__compression__with__tab_8h_a1dee116708809617cb30c057188ba9f7}\label{huffman__compression__with__tab_8h_a1dee116708809617cb30c057188ba9f7}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!printList@{printList}}
+\index{printList@{printList}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{printList()}{printList()}}
+{\footnotesize\ttfamily void print\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element}{Element}} $\ast$}]{debut }\end{DoxyParamCaption})}
+
+
+
+Print a list. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{huffman__compression__with__tab_8h_a1dee116708809617cb30c057188ba9f7}{printList}}(head);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em debut} & The first \mbox{\hyperlink{struct_element}{Element}} of the list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{huffman__compression__with__tab_8h_ad3cdf78d2ce4a2ca3f6889d1d7af72c5}\label{huffman__compression__with__tab_8h_ad3cdf78d2ce4a2ca3f6889d1d7af72c5}} 
+\index{huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}!remove\_first\_elem@{remove\_first\_elem}}
+\index{remove\_first\_elem@{remove\_first\_elem}!huffman\_compression\_with\_tab.h@{huffman\_compression\_with\_tab.h}}
+\doxysubsubsection{\texorpdfstring{remove\_first\_elem()}{remove\_first\_elem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_element}{Element}}$\ast$ remove\+\_\+first\+\_\+elem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_element}{Element}} $\ast$$\ast$}]{head }\end{DoxyParamCaption})}
+
+
+
+Remove the first \mbox{\hyperlink{struct_element}{Element}} of a list. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         temp1 = \mbox{\hyperlink{huffman__compression__with__tab_8h_ad3cdf78d2ce4a2ca3f6889d1d7af72c5}{remove\_first\_elem}}(\&head);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em head} & The first \mbox{\hyperlink{struct_element}{Element}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Element$\ast$ The new first \mbox{\hyperlink{struct_element}{Element}}. 
+\end{DoxyReturn}

@@ -1,0 +1,147 @@
+\hypertarget{conversion_8h}{}\doxysection{Conversion/conversion.h File Reference}
+\label{conversion_8h}\index{Conversion/conversion.h@{Conversion/conversion.h}}
+
+
+Regroup all the function to convert.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{conversion_8h_a45cf0bcb809c2bc1c61096cc0582a03b}{convert\+\_\+10\+\_\+to\+\_\+base\+\_\+octet}} (int number, int base, unsigned char $\ast$number\+In\+Binary)
+\begin{DoxyCompactList}\small\item\em Convert an integer in base octet. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{conversion_8h_a542380f1b3d8bd1ec78ff1229d1a6842}{convert\+\_\+octet\+\_\+to\+\_\+base\+\_\+10}} (unsigned char $\ast$number\+In\+Binary, int base)
+\begin{DoxyCompactList}\small\item\em Convert an octet in base 10. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{conversion_8h_a015012b3b96fb9860534f195f5510953}{convert\+\_\+file\+\_\+in\+\_\+binary}} (F\+I\+LE $\ast$text, F\+I\+LE $\ast$text\+\_\+in\+\_\+binary, char $\ast$path, char $\ast$non\+\_\+compress\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Convert a file in binary. ~\newline
+ Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{conversion_8h_aaba73be9f7f1f030d7872126c0446ffd}{convert\+\_\+binary\+\_\+in\+\_\+file}} (F\+I\+LE $\ast$text\+\_\+in\+\_\+binary, F\+I\+LE $\ast$text\+\_\+convert, char $\ast$non\+\_\+compress\+\_\+path, char $\ast$non\+\_\+compress\+\_\+decompress\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Convert a text in binary in a text with character. ~\newline
+ Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Regroup all the function to convert. 
+
+\begin{DoxyAuthor}{Author}
+Julien H\+A\+S\+S\+O\+UN, Jeremy G\+R\+E\+L\+A\+UD, Amaury R\+O\+S\+S\+I\+G\+N\+OL, Gauthier M\+A\+R\+C\+E\+L\+IN, Guillaume D\+U\+M\+AS. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+8 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2020-\/10-\/27
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{conversion_8h_a45cf0bcb809c2bc1c61096cc0582a03b}\label{conversion_8h_a45cf0bcb809c2bc1c61096cc0582a03b}} 
+\index{conversion.h@{conversion.h}!convert\_10\_to\_base\_octet@{convert\_10\_to\_base\_octet}}
+\index{convert\_10\_to\_base\_octet@{convert\_10\_to\_base\_octet}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{convert\_10\_to\_base\_octet()}{convert\_10\_to\_base\_octet()}}
+{\footnotesize\ttfamily void convert\+\_\+10\+\_\+to\+\_\+base\+\_\+octet (\begin{DoxyParamCaption}\item[{int}]{number,  }\item[{int}]{base,  }\item[{unsigned char $\ast$}]{number\+In\+Binary }\end{DoxyParamCaption})}
+
+
+
+Convert an integer in base octet. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{conversion_8h_a45cf0bcb809c2bc1c61096cc0582a03b}{convert\_10\_to\_base\_octet}}(actualCharact, 2, charact\_convert);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em number} & The number. \\
+\hline
+{\em base} & The base. \\
+\hline
+{\em number\+In\+Binary} & The number in binary base. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{conversion_8h_aaba73be9f7f1f030d7872126c0446ffd}\label{conversion_8h_aaba73be9f7f1f030d7872126c0446ffd}} 
+\index{conversion.h@{conversion.h}!convert\_binary\_in\_file@{convert\_binary\_in\_file}}
+\index{convert\_binary\_in\_file@{convert\_binary\_in\_file}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{convert\_binary\_in\_file()}{convert\_binary\_in\_file()}}
+{\footnotesize\ttfamily void convert\+\_\+binary\+\_\+in\+\_\+file (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{text\+\_\+in\+\_\+binary,  }\item[{F\+I\+LE $\ast$}]{text\+\_\+convert,  }\item[{char $\ast$}]{non\+\_\+compress\+\_\+path,  }\item[{char $\ast$}]{non\+\_\+compress\+\_\+decompress\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Convert a text in binary in a text with character. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{conversion_8h_aaba73be9f7f1f030d7872126c0446ffd}{convert\_binary\_in\_file}}(text\_to\_convert, non\_compress, path, non\_compress\_path);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em text\+\_\+in\+\_\+binary} & The text we will convert. \\
+\hline
+{\em text\+\_\+convert} & The text converted. \\
+\hline
+{\em non\+\_\+compress\+\_\+path} & The path of the converted text. \\
+\hline
+{\em non\+\_\+compress\+\_\+decompress\+\_\+path} & The path of the text we will convert. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{conversion_8h_a015012b3b96fb9860534f195f5510953}\label{conversion_8h_a015012b3b96fb9860534f195f5510953}} 
+\index{conversion.h@{conversion.h}!convert\_file\_in\_binary@{convert\_file\_in\_binary}}
+\index{convert\_file\_in\_binary@{convert\_file\_in\_binary}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{convert\_file\_in\_binary()}{convert\_file\_in\_binary()}}
+{\footnotesize\ttfamily void convert\+\_\+file\+\_\+in\+\_\+binary (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{text,  }\item[{F\+I\+LE $\ast$}]{text\+\_\+in\+\_\+binary,  }\item[{char $\ast$}]{path,  }\item[{char $\ast$}]{non\+\_\+compress\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Convert a file in binary. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         \mbox{\hyperlink{conversion_8h_a015012b3b96fb9860534f195f5510953}{convert\_file\_in\_binary}}(text\_to\_convert, non\_compress, path, non\_compress\_path);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em text} & The text we will convert. \\
+\hline
+{\em text\+\_\+in\+\_\+binary} & The text converted. \\
+\hline
+{\em path} & The path of the converted text. \\
+\hline
+{\em non\+\_\+compress\+\_\+path} & The path of the text we will convert. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{conversion_8h_a542380f1b3d8bd1ec78ff1229d1a6842}\label{conversion_8h_a542380f1b3d8bd1ec78ff1229d1a6842}} 
+\index{conversion.h@{conversion.h}!convert\_octet\_to\_base\_10@{convert\_octet\_to\_base\_10}}
+\index{convert\_octet\_to\_base\_10@{convert\_octet\_to\_base\_10}!conversion.h@{conversion.h}}
+\doxysubsubsection{\texorpdfstring{convert\_octet\_to\_base\_10()}{convert\_octet\_to\_base\_10()}}
+{\footnotesize\ttfamily int convert\+\_\+octet\+\_\+to\+\_\+base\+\_\+10 (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{number\+In\+Binary,  }\item[{int}]{base }\end{DoxyParamCaption})}
+
+
+
+Convert an octet in base 10. ~\newline
+ Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(.c)}
+\DoxyCodeLine{         charactAscii = \mbox{\hyperlink{conversion_8h_a542380f1b3d8bd1ec78ff1229d1a6842}{convert\_octet\_to\_base\_10}}(binary\_number, 2);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em number\+In\+Binary} & The number in binary. \\
+\hline
+{\em base} & The base. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The integer. 
+\end{DoxyReturn}
