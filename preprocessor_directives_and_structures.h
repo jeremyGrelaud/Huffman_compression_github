@@ -19,9 +19,12 @@
                                 printf("%d : %d\n",i, Tab[i]); } \
                             printf("\n");
 
-
+/// Snippet
 #define OPEN(fichier, NOM_FICHIER, TYPE_DOUV)   fichier = fopen(NOM_FICHIER, TYPE_DOUV); \
-                                                if(fichier == NULL) { exit(0); }
+                                                if(fichier == NULL) { \
+                                                    printf("Can't open %s !", NOM_FICHIER); \
+                                                    exit(0); \
+                                                } \
 
 
 /// Paths to Files
