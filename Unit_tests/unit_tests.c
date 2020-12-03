@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "Compress/huffman_compression_with_avl_and_fifo.h"
+#include "../Compress/huffman_compression_with_avl_and_fifo.h"
 #include "unit_tests.h"
 
 int number_of_caracters(FILE* fichier)
